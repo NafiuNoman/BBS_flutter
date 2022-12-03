@@ -11,31 +11,36 @@ class InfoContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 70,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          // width: 200,
+          height: 70,
 
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            blurRadius: 15,
-            blurStyle: BlurStyle.outer,
-          )
-        ],
-      ),
-      child: ListTile(
-        leading: Icon(
-          icon,
-          size: 40,
-          color: Colors.black,
-        ),
-        title: Text(count),
-        subtitle: Text(
-          title,
-          style: TextStyle(fontSize: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.25),
+                blurRadius: 15,
+                blurStyle: BlurStyle.outer,
+              )
+            ],
+          ),
+          child: ListTile(
+            leading: Icon(
+              icon,
+              size: 40,
+              color: Colors.black,
+            ),
+            title: Text(count),
+            subtitle: Text(
+              title,
+              style: TextStyle(fontSize: 10),
+            ),
+          ),
         ),
       ),
     );

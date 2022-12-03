@@ -10,32 +10,33 @@ class MainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: Container(
-        decoration: buttonDecoration(),
-        height: 80,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Container(
+          decoration: buttonDecoration(),
+          height: 80,
 
-
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white),
-              ),
-              Icon(
-                icon,
-                color: Colors.white,
-                size: 50,
-              ),
-              // Image.asset(imagePath!,)
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+                Icon(
+                  icon,
+                  color: Colors.white,
+                  size: 50,
+                ),
+                // Image.asset(imagePath!,)
+              ],
+            ),
           ),
         ),
       ),
@@ -44,11 +45,11 @@ class MainButton extends StatelessWidget {
 
   BoxDecoration buttonDecoration() {
     return BoxDecoration(
-      gradient: LinearGradient(
+      gradient: const LinearGradient(
           colors: [mainButtonStarColor, mainButtonEndColor],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter),
-      boxShadow: [
+      boxShadow: const [
         BoxShadow(blurRadius: 5,blurStyle: BlurStyle.outer,),
         // BoxShadow(blurStyle: BlurStyle.outer,offset: Offset(0, 17),blurRadius: 35,color: Color.fromRGBO(
         //     1, 37, 22, 0.44),),
