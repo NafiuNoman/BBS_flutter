@@ -1,5 +1,7 @@
+import 'package:bbs_app/widgets/google_map.dart';
 import 'package:bbs_app/widgets/info_container.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../widgets/main_button.dart';
 import '../widgets/my_circular_avatar.dart';
@@ -12,6 +14,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final CameraPosition position = CameraPosition(target: LatLng(23.78017129588447, 90.376001686818),zoom: 15);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,11 +139,13 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Text(
                       'Aminul Islam',
-                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      style:
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                     ),
                     Text(
                       'Data Collector',
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
+                      style:
+                          TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
                     )
                   ],
                 ),
@@ -325,6 +330,16 @@ class _HomepageState extends State<Homepage> {
                   color: Color.fromRGBO(29, 66, 50, 1),
                 ),
               ),
+              Expanded(
+                  child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.greenAccent),
+                  borderRadius: BorderRadius.circular(8),
+
+
+                ),
+                    child: GoogleMap(initialCameraPosition: position),
+              ))
             ],
           ),
         ),

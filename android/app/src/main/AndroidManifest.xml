@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bbs_app">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
    <application
         android:label="bbs_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,5 +36,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+<!--       AIzaSyCu1_gV_sOFzlPl4WxhYBpCudEwgjApACM   (arif)-->
+<!--       AIzaSyBc0jjxnSaB4SVojn_gRe22NBmCd4pmtZw  (noman)-->
+<!--       AIzaSyB4Y992NE75OiLlAIQCZVI5u6IeaD32MbI  (RHD develop)-->
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyBc0jjxnSaB4SVojn_gRe22NBmCd4pmtZw"/>
+
     </application>
 </manifest>

@@ -1,4 +1,5 @@
 import 'package:bbs_app/pages/home_page.dart';
+import 'package:bbs_app/pages/map_page.dart';
 import 'package:bbs_app/styles/common_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
