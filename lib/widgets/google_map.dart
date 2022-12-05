@@ -11,7 +11,7 @@ class _MapViewState extends State<MapView> {
 
   // 23.78017129588447, 90.376001686818
 
-  final CameraPosition position = CameraPosition(target: LatLng(23.78017129588447, 90.376001686818),zoom: 15);
+  final CameraPosition position = CameraPosition(target: LatLng(23.78017129588447, 90.376001686818),zoom: 12);
 
 
   @override

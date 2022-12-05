@@ -1,5 +1,6 @@
+import 'package:bbs_app/pages/data_collection_list_page.dart';
 import 'package:bbs_app/pages/home_page.dart';
-import 'package:bbs_app/pages/map_page.dart';
+import 'package:bbs_app/pages/user_profile_page.dart';
 import 'package:bbs_app/styles/common_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:  Homepage(),
+      home:  DataCollectionListPage(),
     );
   }
 }

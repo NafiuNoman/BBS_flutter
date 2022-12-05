@@ -14,7 +14,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  final CameraPosition position = CameraPosition(target: LatLng(23.78017129588447, 90.376001686818),zoom: 15);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -330,16 +329,24 @@ class _HomepageState extends State<Homepage> {
                   color: Color.fromRGBO(29, 66, 50, 1),
                 ),
               ),
+              SizedBox(height: 10,),
               Expanded(
-                  child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.greenAccent),
-                  borderRadius: BorderRadius.circular(8),
+                child: Container(
 
-
+                  decoration: BoxDecoration(
+                    boxShadow: [ BoxShadow(
+                        blurStyle: BlurStyle.inner,
+                        offset: Offset(0, 4),
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 0.5
+                    )],
+                    border: Border.all(color: Colors.greenAccent),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: MapView(),
                 ),
-                    child: GoogleMap(initialCameraPosition: position),
-              ))
+              )
             ],
           ),
         ),
