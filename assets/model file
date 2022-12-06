@@ -1,0 +1,50 @@
+{
+    "dataList":[
+        {"serial":"1",
+            "date":"22.02.2022",
+            "Enumeration Area":"01",
+            "Household Number":"045",
+            "Type":"General",
+            "Male":"03",
+            "Female":"06",
+            "Status":"Submitted"
+        },
+        {"serial":"2",
+            "date":"23.05.2022",
+            "Enumeration Area":"05",
+            "Household Number":"075",
+            "Type":"E",
+            "Male":"03",
+            "Female":"06",
+            "Status":"Submitted"},
+        {"serial":"1",
+            "date":"22.02.2022",
+            "Enumeration Area":"01",
+            "Household Number":"045",
+            "Type":"General",
+            "Male":"03",
+            "Female":"06",
+            "Status":"Submitted"},
+        {"serial":"1",
+            "date":"22.02.2022",
+            "Enumeration Area":"01",
+            "Household Number":"045",
+            "Type":"General",
+            "Male":"03",
+            "Female":"06",
+            "Status":"Submitted"},
+        {"serial":"1",
+            "date":"22.02.2022",
+            "Enumeration Area":"01",
+            "Household Number":"045",
+            "Type":"General",
+            "Male":"03",
+            "Female":"06",
+            "Status":"Submitted"}
+
+
+
+
+
+        ]
+}
