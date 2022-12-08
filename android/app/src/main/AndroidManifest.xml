@@ -40,7 +40,7 @@
 <!--       AIzaSyBc0jjxnSaB4SVojn_gRe22NBmCd4pmtZw  (noman)-->
 <!--       AIzaSyB4Y992NE75OiLlAIQCZVI5u6IeaD32MbI  (RHD develop)-->
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyBc0jjxnSaB4SVojn_gRe22NBmCd4pmtZw"/>
+           android:value="AIzaSyCu1_gV_sOFzlPl4WxhYBpCudEwgjApACM"/>
 
     </application>
 </manifest>
