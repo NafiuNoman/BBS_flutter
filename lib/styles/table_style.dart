@@ -26,7 +26,7 @@ Center areaBox(String value) => Center(
 
     child: Padding(
 
-      padding: const EdgeInsets.all(2.0),
+      padding: const EdgeInsets.all(4.0),
 
       child: Text(value),
 

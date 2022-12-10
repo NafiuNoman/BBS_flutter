@@ -2,8 +2,10 @@ import 'package:bbs_app/widgets/google_map.dart';
 import 'package:bbs_app/widgets/my_circular_avatar.dart';
 import 'package:flutter/material.dart';
 
+import '../styles/common_colors.dart';
 import '../utils/drawer_layout.dart';
 import '../widgets/data_collection_indicator.dart';
+import '../widgets/enamuration_row.dart';
 
 class UserProfilePage extends StatefulWidget {
   const UserProfilePage({Key? key}) : super(key: key);
@@ -57,6 +59,96 @@ class _UserProfilePageState extends State<UserProfilePage> {
         child: Column(
           children: [
             profileInfoSection(),
+            Expanded(
+              flex: 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Survey Data Collection List',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: statusBarColor, fontWeight: FontWeight.w600),
+                  ),
+                  Image.asset(
+                    'assets/images/divider_pic.png',
+                    width: 230,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: EnumerationRow(
+                textStyle: TextStyle(fontSize: 12,color: Color.fromRGBO(153, 153, 153, 1)),
+              ),
+            ),
+            //search bar
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Expanded(
+                flex: 1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Search
+                    Flexible(
+                      flex: 5,
+                      fit: FlexFit.loose,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color.fromRGBO(217, 217, 217, 1))),
+                          hintText: 'Search',
+                          hintStyle: TextStyle(fontSize: 12),
+                          suffixIcon: Icon(Icons.search),
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(2)),
+                        ),
+                      ),
+                    ),
+                    Spacer(
+                      flex: 7,
+                    ),
+                    // Filter
+                    Flexible(
+                      flex: 5,
+                      fit: FlexFit.loose,
+                      child: DropdownButtonFormField(
+                        hint: Text(
+                          'Sort by',
+                          style: TextStyle(fontSize: 11),
+                        ),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(2)),
+                          contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                          // hintText: 'Sort By',
+                          hintStyle: TextStyle(
+                            fontSize: 12,
+                          ),
+                          prefixIcon: Icon(Icons.swap_vert),
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color.fromRGBO(217, 217, 217, 1))),
+
+                          focusedBorder: OutlineInputBorder(),
+                        ),
+                        items: [],
+                        onChanged: null,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             mapSection(),
             dataCollectionSection(),
           ],
