@@ -56,105 +56,154 @@ class _UserProfilePageState extends State<UserProfilePage> {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            profileInfoSection(),
-            Expanded(
-              flex: 2,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Survey Data Collection List',
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              profileInfoSection(),
+              statisticInfoSection(),
+              searchAndFilterSection(),
+              mapSection(),
+              dataCollectionSection(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  SizedBox statisticInfoSection() {
+    return SizedBox(child: Column(children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    'Statistic Information',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: statusBarColor, fontWeight: FontWeight.w600),
                   ),
-                  Image.asset(
-                    'assets/images/divider_pic.png',
-                    width: 230,
+                ),
+                Image.asset(
+                  'assets/images/divider_pic.png',
+                  width: 210,
+                ),
+              ],
+            ),
+
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: EnumerationRow(
+                textStyle: TextStyle(fontSize: 12,color: Color.fromRGBO(41, 42, 46, 1),fontWeight: FontWeight.w600),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  'Data collected so far: ',
+                  style: TextStyle(
+                      color: Color.fromRGBO(41, 42, 46, 1),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12),
+                ),
+                Text('567 household',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Color.fromRGBO(0, 140, 68, 1)))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  'Data collection remains: ',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Color.fromRGBO(41, 42, 46, 1),
+                      fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  '190 Household',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromRGBO(240, 68, 74, 1)),
+                )
+              ],
+            ),
+
+          ],),);
+  }
+
+  Padding searchAndFilterSection() {
+    return Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Search
+                  Flexible(
+                    flex: 5,
+                    fit: FlexFit.loose,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
+                        enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(217, 217, 217, 1))),
+                        hintText: 'Search',
+                        hintStyle: const TextStyle(fontSize: 12),
+                        suffixIcon: const Icon(Icons.search),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(2),),
+                      ),
+                    ),
+                  ),
+                  const Spacer(
+                    flex: 5,
+                  ),
+                  // Filter
+                  Flexible(
+                    flex: 5,
+                    fit: FlexFit.loose,
+                    child: DropdownButtonFormField(
+                      hint: const Text(
+                        'Enumerator Area',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(2)),
+                        contentPadding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
+                        // hintText: 'Sort By',
+                        hintStyle: const TextStyle(
+                          fontSize: 12,
+                        ),
+                        prefixIcon: const Icon(Icons.swap_vert),
+                        filled: true,
+                        fillColor: Colors.white,
+                        enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(217, 217, 217, 1))),
+
+                        focusedBorder: const OutlineInputBorder(),
+                      ),
+                      items: const [],
+                      onChanged: null,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
                   ),
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: EnumerationRow(
-                textStyle: TextStyle(fontSize: 12,color: Color.fromRGBO(153, 153, 153, 1)),
-              ),
-            ),
-            //search bar
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Expanded(
-                flex: 1,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Search
-                    Flexible(
-                      flex: 5,
-                      fit: FlexFit.loose,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color.fromRGBO(217, 217, 217, 1))),
-                          hintText: 'Search',
-                          hintStyle: TextStyle(fontSize: 12),
-                          suffixIcon: Icon(Icons.search),
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(2)),
-                        ),
-                      ),
-                    ),
-                    Spacer(
-                      flex: 7,
-                    ),
-                    // Filter
-                    Flexible(
-                      flex: 5,
-                      fit: FlexFit.loose,
-                      child: DropdownButtonFormField(
-                        hint: Text(
-                          'Sort by',
-                          style: TextStyle(fontSize: 11),
-                        ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(2)),
-                          contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                          // hintText: 'Sort By',
-                          hintStyle: TextStyle(
-                            fontSize: 12,
-                          ),
-                          prefixIcon: Icon(Icons.swap_vert),
-                          filled: true,
-                          fillColor: Colors.white,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color.fromRGBO(217, 217, 217, 1))),
-
-                          focusedBorder: OutlineInputBorder(),
-                        ),
-                        items: [],
-                        onChanged: null,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            mapSection(),
-            dataCollectionSection(),
-          ],
-        ),
-      ),
-    );
+          );
   }
 
   AspectRatio profileInfoSection() {
@@ -180,15 +229,18 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
+            children: const [
+              Text(
                 'Profile information',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500),
               ),
-              const MyCircleAvatar(
-                  radius: 60, imagePath: 'assets/images/userImage.png'),
-              const Text('Aminul Islam', style: TextStyle(color: Colors.white)),
-              const Text('Data Collector', style: TextStyle(color: Colors.white)),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: MyCircleAvatar(
+                    radius: 60, imagePath: 'assets/images/userImage.png'),
+              ),
+              Text('Aminul Islam', style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 15)),
+              Text('Data Collector', style: TextStyle(color: Colors.white,fontSize: 10)),
             ],
           ),
         ));
@@ -202,8 +254,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              boxShadow: [
-                const BoxShadow(
+              boxShadow: const [
+                BoxShadow(
                     blurStyle: BlurStyle.inner,
                     offset: Offset(0, 4),
                     color: Colors.black12,
@@ -235,16 +287,16 @@ class _UserProfilePageState extends State<UserProfilePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const DataCollectionIndicator(
+              children: const [
+                DataCollectionIndicator(
                   value: 0.5,
                   btnLabel: 'Continue',
                 ),
-                const DataCollectionIndicator(
+                DataCollectionIndicator(
                   value: 0.2,
                   btnLabel: 'Continue',
                 ),
-                const DataCollectionIndicator(
+                DataCollectionIndicator(
                   value: 1,
                   btnLabel: 'View List',
                 ),
