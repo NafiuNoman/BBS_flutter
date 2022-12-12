@@ -5,6 +5,8 @@ import 'package:bbs_app/styles/common_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'pages/data_collection_page.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: statusBarColor));
   runApp(const MyApp());
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:  UserProfilePage(),
+      home:  DataCollectionPage(),
     );
   }
 }

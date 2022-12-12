@@ -2,6 +2,7 @@ import 'package:bbs_app/styles/table_style.dart';
 import 'package:flutter/material.dart';
 import '../conts/constant.dart';
 import '../styles/common_colors.dart';
+import '../styles/title_banner.dart';
 import '../utils/app_bar.dart';
 import '../widgets/enamuration_row.dart';
 
@@ -33,21 +34,7 @@ class DataCollectionListPage extends StatelessWidget {
             // Banner
             Expanded(
               flex: 2,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Survey Data Collection List',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: statusBarColor, fontWeight: FontWeight.w600),
-                  ),
-                  Image.asset(
-                    'assets/images/divider_pic.png',
-                    width: 230,
-                  ),
-                ],
-              ),
+              child: titleBanner(title: 'Survey Data Collection List',)
             ),
             // Search and filter
             Expanded(
@@ -124,6 +111,8 @@ class DataCollectionListPage extends StatelessWidget {
       ),
     );
   }
+
+
 
   Expanded tableSection() {
     return Expanded(
