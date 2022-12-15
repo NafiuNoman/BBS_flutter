@@ -22,28 +22,40 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: plusMinusBoxDecoration,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: IconButton(
-                onPressed: _deCremnt,
-                icon: FaIcon(FontAwesomeIcons.circleMinus),color: Color.fromRGBO(73, 73, 73, 0.7), ),
-          ),
-          Text(
-            _value.toString(),
-            style: TextStyle(color:valueColor,fontSize: 16,fontWeight: FontWeight.w500),
-          ),
-           Expanded(
-             child: IconButton(
-              onPressed: _inCrement,
-              icon: Icon(FontAwesomeIcons.circlePlus),
-              color: Color.fromRGBO(73, 73, 73, 0.7),
-          ),
-           ),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 6),
+      child: Container(
+        height: 35,
+        decoration: plusMinusBoxDecoration,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Flexible(
+              fit: FlexFit.loose,
+              child: IconButton(
+                padding: EdgeInsets.zero,
+                  onPressed: _deCremnt,
+                  icon: FaIcon(FontAwesomeIcons.circleMinus,size: 16,),color: Color.fromRGBO(73, 73, 73, 0.7), ),
+            ),
+            Flexible(
+              fit: FlexFit.loose,
+              child: Text(
+                _value.toString(),
+                textAlign: TextAlign.center,
+                style: TextStyle(color:valueColor,fontSize: 12,fontWeight: FontWeight.w500),
+              ),
+            ),
+             Flexible(
+               fit: FlexFit.loose,
+               child: IconButton(
+                 padding: EdgeInsets.zero,
+                onPressed: _inCrement,
+                icon: Icon(FontAwesomeIcons.circlePlus,size: 16,),
+                color: Color.fromRGBO(73, 73, 73, 0.7),
+            ),
+             ),
+          ],
+        ),
       ),
     );
   }
