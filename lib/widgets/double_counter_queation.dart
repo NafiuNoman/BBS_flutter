@@ -41,7 +41,11 @@ class DoubleCounterQuestion extends StatelessWidget {
                   textAlign: TextAlign.start,
                   style: const TextStyle(
                     color: textColor,
-                    fontWeight: FontWeight.w400
+                    fontWeight: FontWeight.w400,
+                    // fontFamily: 'Hind',
+
+
+
                   ),),),
           Expanded(
             flex: 3,

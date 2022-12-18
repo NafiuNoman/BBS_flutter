@@ -1,5 +1,6 @@
 import 'package:bbs_app/pages/data_collection_list_page.dart';
 import 'package:bbs_app/pages/home_page.dart';
+import 'package:bbs_app/pages/login_page.dart';
 import 'package:bbs_app/pages/user_profile_page.dart';
 import 'package:bbs_app/styles/common_colors.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
+        fontFamily: 'Hind'
       ),
-      home:  DataCollectionPage(),
+      home:  LogInPage(),
     );
   }
 }
