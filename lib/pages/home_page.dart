@@ -1,8 +1,11 @@
+import 'package:bbs_app/pages/data_collection_list_page.dart';
+import 'package:bbs_app/pages/data_collection_page.dart';
+import 'package:bbs_app/pages/user_profile_page.dart';
 import 'package:bbs_app/widgets/google_map.dart';
 import 'package:bbs_app/widgets/info_container.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
+import '../utils/drawer_layout.dart';
+import '../widgets/enamuration_row.dart';
 import '../widgets/main_button.dart';
 import '../widgets/my_circular_avatar.dart';
 
@@ -17,6 +20,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: Colors.white,
@@ -46,7 +50,7 @@ class _HomepageState extends State<Homepage> {
         ),
 
         /// App bar Menu
-        actions: const [
+        actions: [
           IconButton(
             onPressed: null,
             icon: Icon(
@@ -68,14 +72,24 @@ class _HomepageState extends State<Homepage> {
               color: Colors.black,
             ),
           ),
-          IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.menu_outlined,
-              color: Colors.black,
+          Builder(
+            builder:(context)=> InkWell(
+              onTap: (){Scaffold.of(context).openDrawer();},
+              child: IconButton(
+                onPressed: null,
+                icon: Icon(
+                  Icons.menu_outlined,
+                  color: Colors.black,
+                ),
+              ),
             ),
           ),
-          MyCircleAvatar(radius: 25, imagePath: 'assets/images/userImage.png'),
+    InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (buidcontext)=>UserProfilePage()));
+                  },
+                  child: MyCircleAvatar(
+                      radius: 25, imagePath: 'assets/images/userImage.png')),
           // Image.asset(
           //   'assets/images/bbs_logo.png',
           //   height: 50,
@@ -172,7 +186,7 @@ class _HomepageState extends State<Homepage> {
                       'Ministry of Planning',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
-                          fontSize: 14,
+                          fontSize: 12,
                           color: Color.fromRGBO(5, 158, 81, 1)),
                     ),
                     SizedBox(
@@ -181,7 +195,13 @@ class _HomepageState extends State<Homepage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Enumeration area: '),
+                        // Text('Enumeration area: '),
+                        EnumerationRow(
+                          textStyle: TextStyle(
+                              color: Color.fromRGBO(41, 42, 46, 1),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12),
+                        ),
                       ],
                     ),
                     Row(
@@ -192,12 +212,12 @@ class _HomepageState extends State<Homepage> {
                           style: TextStyle(
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700,
-                              fontSize: 14),
+                              fontSize: 12),
                         ),
                         Text('567 household',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 14,
+                                fontSize: 12,
                                 color: Color.fromRGBO(0, 140, 68, 1)))
                       ],
                     ),
@@ -207,14 +227,14 @@ class _HomepageState extends State<Homepage> {
                         Text(
                           'Data collection remains: ',
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
                           '190 Household',
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.w700,
                               color: Color.fromRGBO(240, 68, 74, 1)),
                         )
@@ -234,14 +254,28 @@ class _HomepageState extends State<Homepage> {
   Row fourButtonsSection() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        MainButton(
-          title: 'New Info',
-          icon: Icons.add_business_outlined,
+      children: [
+        InkWell(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DataCollectionPage()));
+          },
+          child: MainButton(
+            title: 'New Info',
+            icon: Icons.add_business_outlined,
+          ),
         ),
-        MainButton(
-          title: 'View List',
-          icon: Icons.list_alt_sharp,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DataCollectionListPage()));
+          },
+          child: MainButton(
+            title: 'View List',
+            icon: Icons.list_alt_sharp,
+          ),
         ),
         MainButton(
           title: 'Data Sync',
@@ -329,18 +363,20 @@ class _HomepageState extends State<Homepage> {
                   color: Color.fromRGBO(29, 66, 50, 1),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: Container(
-
                   decoration: BoxDecoration(
-                    boxShadow: [ BoxShadow(
-                        blurStyle: BlurStyle.inner,
-                        offset: Offset(0, 4),
-                        color: Colors.black12,
-                        blurRadius: 5,
-                        spreadRadius: 0.5
-                    )],
+                    boxShadow: [
+                      BoxShadow(
+                          blurStyle: BlurStyle.inner,
+                          offset: Offset(0, 4),
+                          color: Colors.black12,
+                          blurRadius: 5,
+                          spreadRadius: 0.5)
+                    ],
                     border: Border.all(color: Colors.greenAccent),
                     borderRadius: BorderRadius.circular(8),
                   ),

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/my_circular_avatar.dart';
-AppBar myAppBar() {
+AppBar myAppBar(BuildContext context) {
 
 // TextStyle tStyle =  TextStyle(color:Colors.black,fontSize: 10,fontWeight: FontWeight.w400);
   return AppBar(
     backgroundColor: Colors.white,
     toolbarHeight: 70,
     actions: [
-      IconButton(onPressed: (){}, icon:Icon(Icons.menu,color:Colors.black)),
+      Builder(builder:(context)=>
+          InkWell(onTap: (){Scaffold.of(context).openDrawer();},child: IconButton(onPressed: null, icon:Icon(Icons.menu,color:Colors.black)))),
       IconButton(onPressed: (){}, icon:Icon(Icons.home_outlined,color:Colors.black)),
       IconButton(onPressed: (){}, icon:Icon(Icons.notifications_outlined,color:Colors.black)),
       IconButton(onPressed: (){}, icon:Icon(Icons.email_outlined,color:Colors.black)),

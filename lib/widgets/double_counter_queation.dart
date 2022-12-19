@@ -72,10 +72,18 @@ class DoubleCounterQuestion extends StatelessWidget {
               )),
           Expanded(
               flex: 1,
-              child: Container(
-                height: 35,
-                decoration: plusMinusBoxDecoration,
-                child: const Center(child: Text('10',style: TextStyle(color: totalValueColor,fontSize: 12,fontWeight: FontWeight.bold),)),
+              child: Column(
+                children: [
+                  Container(
+                    height: 35,
+                    decoration: plusMinusBoxDecoration,
+                    child: const Center(child: Text('10',style: TextStyle(color: totalValueColor,fontSize: 12,fontWeight: FontWeight.bold),)),
+                  ),
+                  Text(
+                    'Total',
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10),
+                  ),
+                ],
               )),
         ],
       ),
