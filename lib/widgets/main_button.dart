@@ -1,41 +1,47 @@
 import 'package:bbs_app/styles/common_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/data_collection_page.dart';
+
 class MainButton extends StatelessWidget {
   final String title;
   final IconData? icon;
   final String? imagePath;
+  final Widget page;
 
-  const MainButton({super.key, required this.title,  this.icon,  this.imagePath});
+  const MainButton({super.key, required this.title,  this.icon,  this.imagePath,  required this.page});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Container(
-          decoration: buttonDecoration(),
-          height: 80,
+        child: InkWell(
+          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>page));},
+          child: Container(
+            decoration: buttonDecoration(),
+            height: 80,
 
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
-                ),
-                Icon(
-                  icon,
-                  color: Colors.white,
-                  size: 50,
-                ),
-                // Image.asset(imagePath!,)
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  ),
+                  Icon(
+                    icon,
+                    color: Colors.white,
+                    size: 50,
+                  ),
+                  // Image.asset(imagePath!,)
+                ],
+              ),
             ),
           ),
         ),

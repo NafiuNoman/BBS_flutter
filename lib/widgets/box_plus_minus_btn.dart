@@ -4,6 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 const borderColor = Color.fromRGBO(153, 153, 153, 1);
 const valueColor = Color.fromRGBO(0, 148, 68, 1);
 
+
+// FaIcon(FontAwesomeIcons.circleMinus,size: 16,)
+
  Decoration plusMinusBoxDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(4),
   border: Border.all(
@@ -35,7 +38,7 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
               child: IconButton(
                 padding: EdgeInsets.zero,
                   onPressed: _deCremnt,
-                  icon: FaIcon(FontAwesomeIcons.circleMinus,size: 16,),color: Color.fromRGBO(73, 73, 73, 0.7), ),
+                  icon: Icon(Icons.remove_circle_outline_outlined,size: 16,),color: Color.fromRGBO(73, 73, 73, 0.7), ),
             ),
             Flexible(
               fit: FlexFit.loose,
@@ -50,7 +53,7 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
                child: IconButton(
                  padding: EdgeInsets.zero,
                 onPressed: _inCrement,
-                icon: Icon(FontAwesomeIcons.circlePlus,size: 16,),
+                icon: Icon(Icons.add_circle_outline_outlined,size: 16,),
                 color: Color.fromRGBO(73, 73, 73, 0.7),
             ),
              ),

@@ -73,8 +73,10 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           Builder(
-            builder:(context)=> InkWell(
-              onTap: (){Scaffold.of(context).openDrawer();},
+            builder: (context) => InkWell(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
               child: IconButton(
                 onPressed: null,
                 icon: Icon(
@@ -84,12 +86,15 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
           ),
-    InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (buidcontext)=>UserProfilePage()));
-                  },
-                  child: MyCircleAvatar(
-                      radius: 25, imagePath: 'assets/images/userImage.png')),
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (buidcontext) => UserProfilePage()));
+              },
+              child: MyCircleAvatar(
+                  radius: 25, imagePath: 'assets/images/userImage.png')),
           // Image.asset(
           //   'assets/images/bbs_logo.png',
           //   height: 50,
@@ -135,16 +140,19 @@ class _HomepageState extends State<Homepage> {
         decoration: BoxDecoration(
             color: const Color.fromRGBO(0, 140, 68, 0.1),
             borderRadius: BorderRadius.circular(8),
-            boxShadow: [BoxShadow(blurRadius: 5, blurStyle: BlurStyle.outer)]),
+            boxShadow: const [
+              BoxShadow(blurRadius: 5, blurStyle: BlurStyle.outer)
+            ]),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              /// profile image & name
               Expanded(
                 flex: 3,
                 child: Column(
-                  children: const [
+                  children: [
                     MyCircleAvatar(
                       radius: 60,
                       // imagePath: 'assets/images/view_list_btn.png',
@@ -152,13 +160,15 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Text(
                       'Aminul Islam',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
                     ),
                     Text(
                       'Data Collector',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 10, height: 1),
                     )
                   ],
                 ),
@@ -254,34 +264,26 @@ class _HomepageState extends State<Homepage> {
   Row fourButtonsSection() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        InkWell(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DataCollectionPage()));
-          },
-          child: MainButton(
-            title: 'New Info',
-            icon: Icons.add_business_outlined,
-          ),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => DataCollectionListPage()));
-          },
-          child: MainButton(
-            title: 'View List',
-            icon: Icons.list_alt_sharp,
-          ),
-        ),
+      children: const [
         MainButton(
+          page: DataCollectionPage(),
+          title: 'New Info',
+          icon: Icons.add_business_outlined,
+        ),
+
+        MainButton(
+          page: DataCollectionListPage(),
+          title: 'View List',
+          icon: Icons.list_alt_sharp,
+        ),
+
+        MainButton(
+          page: Text('data'),
           title: 'Data Sync',
           icon: Icons.sync,
         ),
         MainButton(
+          page: Text('data'),
           title: 'Message',
           icon: Icons.message_sharp,
         ),
@@ -326,11 +328,11 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     InfoContainer(
-                        icon: Icons.home_outlined,
+                        icon: Icons.house_outlined,
                         title: 'General Household',
                         count: '20'),
                     InfoContainer(
-                        icon: Icons.home_outlined,
+                        icon: Icons.apartment_outlined,
                         title: 'Institutional  Household',
                         count: '2'),
                   ],
@@ -342,11 +344,11 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     InfoContainer(
-                        icon: Icons.ac_unit_outlined,
+                        icon: Icons.maps_home_work_outlined,
                         title: 'Others',
                         count: '06'),
                     InfoContainer(
-                        icon: Icons.add_business_outlined,
+                        icon: Icons.holiday_village_outlined,
                         title: 'Total',
                         count: '28'),
                   ],

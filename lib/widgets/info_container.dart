@@ -19,7 +19,7 @@ class InfoContainer extends StatelessWidget {
           height: 70,
 
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(15),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
@@ -30,15 +30,16 @@ class InfoContainer extends StatelessWidget {
             ],
           ),
           child: ListTile(
+
             leading: Icon(
               icon,
               size: 40,
-              color: Colors.black,
+              color: Color.fromRGBO(65, 62, 62, 1.0),
             ),
-            title: Text(count),
+            title: Text(count,style: TextStyle(fontWeight: FontWeight.w500,height: 1),),
             subtitle: Text(
               title,
-              style: TextStyle(fontSize: 10),
+              style: TextStyle(height: 1,fontSize: 11,fontWeight: FontWeight.w500,color: Color.fromRGBO(144, 152, 163, 1)),
             ),
           ),
         ),
