@@ -200,3 +200,9 @@ var dataList = [
     "Status": "Submitted"
   },
 ];
+const List sliderImageList = [
+  {'path': 'assets/images/sliders/splash1.png', 'text': 'Manage, process, monitor and analyze data through dashboards and generate reports instantly.'},
+  {'path': 'assets/images/sliders/splash2.png', 'text': 'Helps ensure the survey is more efficient and collects high quality data'},
+  {'path': 'assets/images/sliders/splash3.png', 'text': 'Offline data storage facilitates smooth surveys in remote areas without electricity or internet connection.'},
+  {'path': 'assets/images/sliders/splash4.png', 'text': 'Facility to fill questions, skip questions and check progress bar according to each module.'},
+];

@@ -1,6 +1,8 @@
 import 'package:bbs_app/styles/common_colors.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import '../conts/constant.dart';
 import 'home_page.dart';
 
 class LogInPage extends StatefulWidget {
@@ -28,25 +30,10 @@ class _LogInPageState extends State<LogInPage> {
               children: [
                 //images row
                 logoAndHeadingSection(),
-                const SizedBox(
-                  height: 20,
-                ),
-                Image.asset(
-                  'assets/images/splash1.png',
-                  height: 140,
-                  width: 140,
-                ),
-                const SizedBox(
-                  width: 350,
-                  child: Text(
-                    'Manage, process, monitor and analyze data through dashboards and generate reports instantly.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 10),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
+
+                buildCarousel(),
+
+
 
 
                 const Text(
@@ -72,6 +59,40 @@ class _LogInPageState extends State<LogInPage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget buildCarousel() {
+    return CarouselSlider(
+
+
+      items: sliderImageList
+          .map(
+            (e) => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(e['path'],height: 150,width: 150,),
+                SizedBox(
+                  width: 300,
+                  child: Text(
+                    e['text'],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 11,fontWeight: FontWeight.w500,color: Colors.black.withOpacity(0.68)
+                    ),
+                  ),
+                ),
+              ],
+            ),
+      )
+          .toList(),
+      options: CarouselOptions(
+        height: 250,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 3),
+        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
       ),
     );
   }

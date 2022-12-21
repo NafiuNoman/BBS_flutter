@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Hind'
       ),
-      home:  DataCollectionListPage(),
+      home:  LogInPage(),
     );
   }
 }
