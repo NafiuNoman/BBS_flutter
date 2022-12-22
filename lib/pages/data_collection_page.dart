@@ -27,31 +27,31 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                titleBanner(title: "Data Collection page"),
+                titleBanner(title: "Data Collection Page"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text(
+                    'Module 1: Household Information ',
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Expanded(
                       flex: 2,
                       child: Text(
                         'Q 1a:',
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: textColor, fontWeight: FontWeight.w600),
                       ),
                     ),
-                    // Expanded(
-                    //   flex: 1,
-                    //   child: Text(
-                    //     number,
-                    //     textAlign: TextAlign.start,
-                    //   ),
-                    // ),
                     Expanded(
                       flex: 18,
                       child: Text(
                         'Household Address',
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: textColor,
                           fontWeight: FontWeight.w600,
                           // fontFamily: 'Hind',
@@ -60,18 +60,21 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     ),
                   ],
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
-                    hintStyle: TextStyle(fontSize: 12),
-                    suffixIcon: Icon(Icons.edit),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(2)),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 12.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
+                      enabledBorder: const OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
+                      hintStyle: const TextStyle(fontSize: 12),
+                      suffixIcon: const Icon(Icons.edit),
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2)),
+                    ),
                   ),
                 ),
                 Row(
@@ -95,7 +98,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     Expanded(
                       flex: 18,
                       child: Text(
-                        'Sample Census Household no',
+                        'Sample Census Household no.',
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           color: textColor,
@@ -106,17 +109,20 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     ),
                   ],
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
-                    hintStyle: TextStyle(fontSize: 12),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(2)),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 12.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
+                      hintStyle: TextStyle(fontSize: 12),
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2)),
+                    ),
                   ),
                 ),
                 Row(
@@ -140,7 +146,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     Expanded(
                       flex: 18,
                       child: Text(
-                        'Census Household no',
+                        'Census Household no.',
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           color: textColor,
@@ -151,33 +157,33 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     ),
                   ],
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
-                    hintStyle: TextStyle(fontSize: 12),
-                    suffixIcon: Icon(Icons.edit),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(2)),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 12.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
+                      hintStyle: TextStyle(fontSize: 12),
+                      suffixIcon: Icon(Icons.edit),
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2)),
+                    ),
                   ),
                 ),
                 SizedBox(height: 10,),
                 /////counter form start from here
-                Text(
-                  'Module 1: Household Information ',
-                  style: TextStyle(fontWeight: FontWeight.w700),
-                ),
+
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       flex: 2,
                       child: Text(
-                        'Q 3',
+                        'Q 3:',
                         style: const TextStyle(
                             color: textColor, fontWeight: FontWeight.w600),
                       ),
@@ -204,24 +210,24 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                   ],
                 ),
                 DoubleCounterQuestion(
-                  number: '3a',
+                  number: '3a.',
                   question: 'Memner Usually live',
                 ),
                 DoubleCounterQuestion(
-                  number: '3b',
+                  number: '3b.',
                   question:
                       'Members: People who usually live in the house but are currently absent',
                 ),
                 DoubleCounterQuestion(
-                  number: '3c',
+                  number: '3c.',
                   question: 'Members of the household currently live abroad',
                 ),
                 DoubleCounterQuestion(
-                  number: '3d',
+                  number: '3d.',
                   question: 'Guest',
                 ),
                 DoubleCounterQuestion(
-                  number: '3e',
+                  number: '3e.',
                   question:
                       'Members of the household have gone abroad and returned (within the last 5 years)',
                 ),
@@ -235,7 +241,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                       height: 40,
                       width: 160,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2),
+                          borderRadius: BorderRadius.circular(8),
                           color: Color.fromRGBO(0, 140, 68, 1)),
                       child: Center(
                         child: Text(
@@ -250,7 +256,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                       height: 40,
                       width: 160,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2),
+                          borderRadius: BorderRadius.circular(8),
                           border: Border.all(color:Color.fromRGBO(0, 140, 68, 1),),
                          ),
                       child: Center(

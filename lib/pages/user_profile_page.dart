@@ -291,14 +291,17 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 DataCollectionIndicator(
                   value: 0.5,
                   btnLabel: 'Continue',
+                  areaTitle:'Area 01: Keranigonj' ,
                 ),
                 DataCollectionIndicator(
                   value: 0.2,
                   btnLabel: 'Continue',
+                  areaTitle: 'Area 02: Nowabgonj' ,
                 ),
                 DataCollectionIndicator(
                   value: 1,
                   btnLabel: 'View List',
+                  areaTitle: 'Area 06: Dohar',
                 ),
               ],
             ),

@@ -264,28 +264,28 @@ class _HomepageState extends State<Homepage> {
   Row fourButtonsSection() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children:  const [
         MainButton(
           page: DataCollectionPage(),
           title: 'New Info',
-          icon: Icons.add_business_outlined,
+          imagePath: 'assets/images/mainbutton/newinfo.png',
         ),
 
         MainButton(
           page: DataCollectionListPage(),
           title: 'View List',
-          icon: Icons.list_alt_sharp,
+          imagePath:'assets/images/mainbutton/viewlist.png',
         ),
 
         MainButton(
           page: Text('data'),
           title: 'Data Sync',
-          icon: Icons.sync,
+          imagePath: 'assets/images/mainbutton/datasync.png',
         ),
         MainButton(
           page: Text('data'),
           title: 'Message',
-          icon: Icons.message_sharp,
+          imagePath:'assets/images/mainbutton/message.png',
         ),
 
         ///four button
@@ -326,13 +326,15 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children:  [
                     InfoContainer(
-                        icon: Icons.house_outlined,
+                      imagePath:'assets/images/talley/talley1.png' ,
+
                         title: 'General Household',
                         count: '20'),
                     InfoContainer(
-                        icon: Icons.apartment_outlined,
+                      imagePath:'assets/images/talley/talley4.png' ,
+
                         title: 'Institutional  Household',
                         count: '2'),
                   ],
@@ -342,13 +344,13 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children:  [
                     InfoContainer(
-                        icon: Icons.maps_home_work_outlined,
+                        imagePath:'assets/images/talley/talley2.png' ,
                         title: 'Others',
                         count: '06'),
                     InfoContainer(
-                        icon: Icons.holiday_village_outlined,
+                        imagePath: 'assets/images/talley/talley3.png',
                         title: 'Total',
                         count: '28'),
                   ],

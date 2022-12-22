@@ -67,6 +67,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/sliders/
+    - assets/images/talley/
+    - assets/images/mainbutton/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

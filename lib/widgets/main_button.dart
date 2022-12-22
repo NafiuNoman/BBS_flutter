@@ -5,11 +5,10 @@ import '../pages/data_collection_page.dart';
 
 class MainButton extends StatelessWidget {
   final String title;
-  final IconData? icon;
-  final String? imagePath;
+  final String imagePath;
   final Widget page;
 
-  const MainButton({super.key, required this.title,  this.icon,  this.imagePath,  required this.page});
+  const MainButton({super.key, required this.title,    required this.imagePath,  required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class MainButton extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     title,
@@ -34,12 +33,7 @@ class MainButton extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         color: Colors.white),
                   ),
-                  Icon(
-                    icon,
-                    color: Colors.white,
-                    size: 50,
-                  ),
-                  // Image.asset(imagePath!,)
+                  Image.asset(imagePath,width: 55,height: 55,),
                 ],
               ),
             ),

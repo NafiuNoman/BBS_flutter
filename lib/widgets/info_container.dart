@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class InfoContainer extends StatelessWidget {
-  final IconData icon;
+  final String imagePath;
   final String title;
   final String count;
 
   const InfoContainer(
-      {Key? key, required this.icon, required this.title, required this.count})
+      {Key? key,  required this.title, required this.count, required this.imagePath})
       : super(key: key);
 
   @override
@@ -31,11 +31,8 @@ class InfoContainer extends StatelessWidget {
           ),
           child: ListTile(
 
-            leading: Icon(
-              icon,
-              size: 40,
-              color: Color.fromRGBO(65, 62, 62, 1.0),
-            ),
+            leading: Image.asset(imagePath,height: 60,width: 40,),
+
             title: Text(count,style: TextStyle(fontWeight: FontWeight.w500,height: 1),),
             subtitle: Text(
               title,
@@ -47,3 +44,4 @@ class InfoContainer extends StatelessWidget {
     );
   }
 }
+

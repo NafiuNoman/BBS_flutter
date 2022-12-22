@@ -38,7 +38,7 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
               child: IconButton(
                 padding: EdgeInsets.zero,
                   onPressed: _deCremnt,
-                  icon: Icon(Icons.remove_circle_outline_outlined,size: 16,),color: Color.fromRGBO(73, 73, 73, 0.7), ),
+                  icon: Icon(Icons.remove_circle_outline_outlined,size: 19,),color: Color.fromRGBO(73, 73, 73, 0.7), ),
             ),
             Flexible(
               fit: FlexFit.loose,
@@ -53,7 +53,7 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
                child: IconButton(
                  padding: EdgeInsets.zero,
                 onPressed: _inCrement,
-                icon: Icon(Icons.add_circle_outline_outlined,size: 16,),
+                icon: Icon(Icons.add_circle_outline_outlined,size: 19,),
                 color: Color.fromRGBO(73, 73, 73, 0.7),
             ),
              ),
