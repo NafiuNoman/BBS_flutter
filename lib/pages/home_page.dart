@@ -51,21 +51,21 @@ class _HomepageState extends State<Homepage> {
 
         /// App bar Menu
         actions: [
-          IconButton(
+          const IconButton(
             onPressed: null,
             icon: Icon(
               Icons.email_outlined,
               color: Colors.black,
             ),
           ),
-          IconButton(
+          const IconButton(
             onPressed: null,
             icon: Icon(
               Icons.home_outlined,
               color: Colors.black,
             ),
           ),
-          IconButton(
+          const IconButton(
             onPressed: null,
             icon: Icon(
               Icons.notifications_outlined,
@@ -77,7 +77,7 @@ class _HomepageState extends State<Homepage> {
               onTap: () {
                 Scaffold.of(context).openDrawer();
               },
-              child: IconButton(
+              child: const IconButton(
                 onPressed: null,
                 icon: Icon(
                   Icons.menu_outlined,
@@ -91,9 +91,9 @@ class _HomepageState extends State<Homepage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (buidcontext) => UserProfilePage()));
+                        builder: (buidcontext) => const UserProfilePage()));
               },
-              child: MyCircleAvatar(
+              child: const MyCircleAvatar(
                   radius: 25, imagePath: 'assets/images/userImage.png')),
           // Image.asset(
           //   'assets/images/bbs_logo.png',
@@ -153,19 +153,19 @@ class _HomepageState extends State<Homepage> {
                 flex: 3,
                 child: Column(
                   children: [
-                    MyCircleAvatar(
+                    const MyCircleAvatar(
                       radius: 60,
                       // imagePath: 'assets/images/view_list_btn.png',
                       imagePath: 'assets/images/userImage.png',
                     ),
-                    Text(
+                    const Text(
                       'Aminul Islam',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Data Collector',
                       style: TextStyle(
                           fontWeight: FontWeight.w500, fontSize: 10, height: 1),
@@ -178,35 +178,35 @@ class _HomepageState extends State<Homepage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Bangladesh Bureau of Statistics',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
                           color: Color.fromRGBO(14, 86, 60, 1)),
                     ),
-                    Text(
+                    const Text(
                       'Department of Statistics and Information Management',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 10,
                           color: Color.fromRGBO(29, 66, 50, 1)),
                     ),
-                    Text(
+                    const Text(
                       'Ministry of Planning',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 12,
                           color: Color.fromRGBO(5, 158, 81, 1)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // Text('Enumeration area: '),
-                        EnumerationRow(
+                        const EnumerationRow(
                           textStyle: TextStyle(
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700,
@@ -217,14 +217,14 @@ class _HomepageState extends State<Homepage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Data collected so far: ',
                           style: TextStyle(
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700,
                               fontSize: 12),
                         ),
-                        Text('567 household',
+                        const Text('567 household',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
@@ -234,14 +234,14 @@ class _HomepageState extends State<Homepage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Data collection remains: ',
                           style: TextStyle(
                               fontSize: 12,
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700),
                         ),
-                        Text(
+                        const Text(
                           '190 Household',
                           style: TextStyle(
                               fontSize: 12,
@@ -327,12 +327,12 @@ class _HomepageState extends State<Homepage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:  [
-                    InfoContainer(
+                    const InfoContainer(
                       imagePath:'assets/images/talley/talley1.png' ,
 
                         title: 'General Household',
                         count: '20'),
-                    InfoContainer(
+                    const InfoContainer(
                       imagePath:'assets/images/talley/talley4.png' ,
 
                         title: 'Institutional  Household',
@@ -345,11 +345,11 @@ class _HomepageState extends State<Homepage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:  [
-                    InfoContainer(
+                    const InfoContainer(
                         imagePath:'assets/images/talley/talley2.png' ,
                         title: 'Others',
                         count: '06'),
-                    InfoContainer(
+                    const InfoContainer(
                         imagePath: 'assets/images/talley/talley3.png',
                         title: 'Total',
                         count: '28'),
@@ -367,14 +367,14 @@ class _HomepageState extends State<Homepage> {
                   color: Color.fromRGBO(29, 66, 50, 1),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
                     boxShadow: [
-                      BoxShadow(
+                      const BoxShadow(
                           blurStyle: BlurStyle.inner,
                           offset: Offset(0, 4),
                           color: Colors.black12,
@@ -384,7 +384,7 @@ class _HomepageState extends State<Homepage> {
                     border: Border.all(color: Colors.greenAccent),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: MapView(),
+                  child: const MapView(),
                 ),
               )
             ],

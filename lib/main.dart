@@ -1,3 +1,4 @@
+import 'package:bbs_app/modules/module_02.dart';
 import 'package:bbs_app/pages/data_collection_list_page.dart';
 import 'package:bbs_app/pages/home_page.dart';
 import 'package:bbs_app/pages/login_page.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Hind'
       ),
-      home: Homepage(),
+      home: DataCollectionPage(),
     );
   }
 }

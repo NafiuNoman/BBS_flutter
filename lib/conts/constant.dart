@@ -1,3 +1,6 @@
+
+
+
 var dataList = [
   {
     "serial": "1",
@@ -206,3 +209,5 @@ const List sliderImageList = [
   {'path': 'assets/images/sliders/splash3.png', 'text': 'Offline data storage facilitates smooth surveys in remote areas without electricity or internet connection.'},
   {'path': 'assets/images/sliders/splash4.png', 'text': 'Facility to fill questions, skip questions and check progress bar according to each module.'},
 ];
+
+

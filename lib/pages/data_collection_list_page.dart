@@ -119,7 +119,7 @@ class DataCollectionListPage extends StatelessWidget {
     );
   }
 
-  Expanded tableSection() {
+  Widget tableSection() {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -128,10 +128,11 @@ class DataCollectionListPage extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
+              horizontalMargin: 10 ,
               columnSpacing: 15,
               headingRowHeight: 30,
               dataRowHeight: 40,
-              headingTextStyle: TextStyle(
+              headingTextStyle: const TextStyle(
                 fontSize: 8,
               ),
               dataTextStyle: const TextStyle(
@@ -142,17 +143,9 @@ class DataCollectionListPage extends StatelessWidget {
               headingRowColor:
                   MaterialStateProperty.all(tableHeadingRowFillColor),
               dataRowColor: MaterialStateProperty.all(tableRowFillColor),
-              border: TableBorder(
-                borderRadius: BorderRadius.circular(3),
-                top: borderSide,
-                bottom: borderSide,
-                left: borderSide,
-                right: borderSide,
-                horizontalInside: borderSide,
-                verticalInside: borderSide,
-              ),
+              border: TableBorder.all(color: tableStrokeColor,borderRadius: BorderRadius.circular(3),width: 2,style: BorderStyle.solid),
               columns: const [
-                DataColumn(label: Text('Serial', textAlign: TextAlign.center)),
+                DataColumn(label: Expanded(child: Text('Serial', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
                         child: Text('Date', textAlign: TextAlign.center))),
