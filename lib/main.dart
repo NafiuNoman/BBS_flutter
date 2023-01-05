@@ -27,6 +27,11 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
 
+        radioTheme: RadioThemeData(visualDensity:VisualDensity(horizontal: -4.0),),
+
+
+        listTileTheme: ListTileThemeData(horizontalTitleGap: 0),
+
         primarySwatch: Colors.blue,
         fontFamily: 'Hind'
       ),

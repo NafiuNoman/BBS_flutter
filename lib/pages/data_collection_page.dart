@@ -30,39 +30,10 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
           child: Column(
             children: [
               titleBanner(title: "Data Collection Page"),
-
-              // SizedBox(
-              //   width: double.infinity,
-              //   height: double.infinity,
-              //   child: PageView(scrollDirection: Axis.horizontal,children: [
-              //     Container(color: Colors.pinkAccent,),
-              //     Container(color: Colors.grey,),
-              //     Container(color: Colors.yellow,),
-              //
-              //
-              //   ],),
-              // ),
-              // Expanded(child: PageView(
-              //   scrollDirection: Axis.horizontal,
-              //
-              //   children: [
-              //     Module01(),
-              //     Module02(),
-              //   ],
-              //
-              //
-              // )),
-              Expanded(
-
-
-                child: PageView(scrollDirection: Axis.horizontal,
-
-                    children: [
-                      Module01(),
-                      Module02(),
-                    ],),
-              ),
-              // Module02(),
+              //pageView
+              const SizedBox(height: 10,),
+              buildPageView(),
+              const SizedBox(height: 10,),
 
               //Submit and Draft button
               Row(
@@ -105,6 +76,34 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                   ),
                 ],
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Expanded buildPageView() {
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+            boxShadow: [
+              BoxShadow(
+                blurStyle: BlurStyle.outer,
+                blurRadius: 15,
+                spreadRadius: 0,
+                color: Colors.black.withOpacity(0.40),
+              )
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
+          child: PageView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              Module01(),
+              Module02(),
             ],
           ),
         ),
@@ -173,12 +172,4 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
       ],
     );
   }
-
-  final pageView = PageView(
-    scrollDirection: Axis.vertical,
-    children: [
-      Module01(),
-      Module02(),
-    ],
-  );
 }
