@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../modules/module_01.dart';
 import '../modules/module_02.dart';
+import '../modules/moudle_03.dart';
 import '../widgets/double_counter_queation.dart';
 import '../widgets/my_circular_avatar.dart';
 
@@ -104,6 +105,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
             children: [
               Module01(),
               Module02(),
+              Module03(),
             ],
           ),
         ),
