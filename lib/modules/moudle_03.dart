@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/my_text_field.dart';
 import '../widgets/question_row.dart';
 
 class Module03 extends StatefulWidget {
@@ -42,23 +43,7 @@ class _Module03State extends State<Module03> {
 
           QuestionRow(
               questionNo: 'Q 11:', question: 'The owner of the household.'),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
-                enabledBorder: const OutlineInputBorder(
-                    borderSide:
-                    BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
-                hintStyle: const TextStyle(fontSize: 12),
-                suffixIcon: const Icon(Icons.edit),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(2)),
-              ),
-            ),
-          ),
+          MyTextField(icon: Icons.edit,),
 
           QuestionRow(
               questionNo: 'Q 12:', question: 'Drinkable Water'),

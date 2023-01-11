@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../modules/module_01.dart';
 import '../modules/module_02.dart';
 import '../modules/moudle_03.dart';
+import '../modules/moudle_04.dart';
 import '../widgets/double_counter_queation.dart';
 import '../widgets/my_circular_avatar.dart';
 
@@ -101,11 +102,14 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
           child: PageView(
+            controller: PageController(initialPage: 4),
             scrollDirection: Axis.horizontal,
             children: [
               Module01(),
               Module02(),
               Module03(),
+              Module04(),
+
             ],
           ),
         ),

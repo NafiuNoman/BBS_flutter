@@ -4,7 +4,8 @@ const textColor =  Color.fromRGBO(73, 73, 73, 1);
 class QuestionRow extends StatelessWidget {
   final String questionNo;
   final String question;
- const  QuestionRow({Key? key, required this.questionNo, required this.question, }) : super(key: key);
+  final String? note;
+   const QuestionRow({Key? key, required this.questionNo, required this.question, this.note }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,8 @@ class QuestionRow extends StatelessWidget {
             ),
           ),
         ),
+
+        Text(note??''),
       ],
     );
   }
