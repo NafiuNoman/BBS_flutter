@@ -13,26 +13,22 @@ class Module04 extends StatefulWidget {
 }
 
 class _Module04State extends State<Module04> {
-  bool isVisibility=false;
-  String q_32a_value='';
+  bool isVisibility = false;
+  String q_32a_value = '';
+  String q_24a_value = '';
 
-  void dropDownCallBack(String text)
-  {
+  void dropDownCallBack(String text) {
     q_32a_value = text;
     setState(() {
-
-      text=='1. Same District'?isVisibility=true:isVisibility=false;
-
+      text == '1. Same District' ? isVisibility = true : isVisibility = false;
     });
-
   }
-
-
 
   String q22HelperText =
       """( Enter the names of all the members who usually live in this house. Write the member's nickname in English capital letters. Write the names of the head of household first, then wife/husband, younger children to older children, other 
  relatives and non-relatives in order.)""";
   String? q_25_groupValue;
+  String? q_26_groupValue;
   String? q_27_groupValue;
   String? q_29_groupValue;
   String? q_28_groupValue;
@@ -53,12 +49,11 @@ class _Module04State extends State<Module04> {
     '1. Same District',
     '2. Different District ',
     '3. Different Country',
-
-
   ];
 
   @override
   Widget build(BuildContext context) {
+    print('form build..$q_24a_value');
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -93,7 +88,9 @@ class _Module04State extends State<Module04> {
               )
             ],
           ),
-          MyTextField(icon: Icons.edit,),
+          MyTextField(
+            icon: Icons.edit,
+          ),
 
           Row(
             children: const [
@@ -117,15 +114,26 @@ class _Module04State extends State<Module04> {
               )
             ],
           ),
-          MyTextField(width: 120,icon: Icons.edit,),
+          MyTextField(
+            width: 120,
+            icon: Icons.edit,
+          ),
 
           const QuestionRow(
             questionNo: 'Q 24:',
             question: ' Relationship with the head household? ',
           ),
 
+          MyDropDown(
+            items: q_24_item_list,
+            dropDownCallback: (String text) {
+              setState(() {
 
-          MyDropDown(items: q_24_item_list,dropDownCallback: dropDownCallBack,),
+                q_24a_value = text;
+
+              });
+            },
+          ),
 
           const QuestionRow(
             questionNo: 'Q 25:',
@@ -140,7 +148,19 @@ class _Module04State extends State<Module04> {
                   q_25_groupValue = value;
                 });
               }),
-          ///TODO: 26 no question
+          const QuestionRow(
+            questionNo: 'Q 26:',
+            question: 'Mother’s line number? ',
+          ),
+          MyRadioList(
+              height: 30,
+              radioList: ['Yes', 'No'],
+              groupValue: q_26_groupValue,
+              onChange: (value) {
+                setState(() {
+                  q_26_groupValue = value;
+                });
+              }),
 
           const QuestionRow(
             questionNo: 'Q 27:',
@@ -217,7 +237,17 @@ class _Module04State extends State<Module04> {
             questionNo: 'Q 32 a:',
             question: 'Where’s the Birthplace?',
           ),
-          MyDropDown(items: q_32_item_list,dropDownCallback: dropDownCallBack,),
+          MyDropDown(
+            items: q_32_item_list,
+            dropDownCallback: (String text) {
+              q_32a_value = text;
+              setState(() {
+                text == '1. Same District'
+                    ? isVisibility = true
+                    : isVisibility = false;
+              });
+            },
+          ),
           Visibility(
             visible: isVisibility,
             child: const QuestionRow(
@@ -228,8 +258,8 @@ class _Module04State extends State<Module04> {
           Visibility(
             visible: isVisibility,
             child: Padding(
-              padding:
-              const EdgeInsets.only(left: 20.0, top: 5, right: 8, bottom: 8),
+              padding: const EdgeInsets.only(
+                  left: 20.0, top: 5, right: 8, bottom: 8),
               child: SizedBox(
                 width: 120,
                 child: TextFormField(
@@ -237,8 +267,8 @@ class _Module04State extends State<Module04> {
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
                     enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color.fromRGBO(217, 217, 217, 1))),
+                        borderSide: BorderSide(
+                            color: Color.fromRGBO(217, 217, 217, 1))),
                     hintStyle: const TextStyle(fontSize: 12),
                     suffixIcon: const Icon(Icons.edit),
                     filled: true,
@@ -251,11 +281,9 @@ class _Module04State extends State<Module04> {
             ),
           ),
 
+          ///TODO:  34-39
         ],
       ),
     );
   }
 }
-
-
-

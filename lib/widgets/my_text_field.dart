@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
  final IconData? icon;
  final double? width;
+ final TextInputType? inputType;
 
    MyTextField({
-    Key? key, this.icon, this.width,
+    Key? key, this.icon, this.width, this.inputType=TextInputType.text,
   }) : super(key: key);
 
   @override
@@ -15,7 +16,7 @@ class MyTextField extends StatelessWidget {
       const EdgeInsets.only(left: 20.0, top: 5, right: 8, bottom: 8),
       child: SizedBox(  width: width,
         child: TextFormField(
-          keyboardType: TextInputType.number,
+          keyboardType: inputType,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
             enabledBorder: const OutlineInputBorder(

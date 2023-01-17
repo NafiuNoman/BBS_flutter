@@ -1,13 +1,10 @@
 import 'package:bbs_app/styles/title_banner.dart';
-import 'package:bbs_app/widgets/box_plus_minus_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../modules/module_01.dart';
 import '../modules/module_02.dart';
-import '../modules/moudle_03.dart';
-import '../modules/moudle_04.dart';
-import '../widgets/double_counter_queation.dart';
+import '../modules/module_03.dart';
+import '../modules/module_04.dart';
+import '../modules/module_05.dart';
 import '../widgets/my_circular_avatar.dart';
 
 class DataCollectionPage extends StatefulWidget {
@@ -46,8 +43,8 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     width: 160,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Color.fromRGBO(0, 140, 68, 1)),
-                    child: Center(
+                        color: const Color.fromRGBO(0, 140, 68, 1)),
+                    child: const Center(
                       child: Text(
                         'Save as Draft',
                         style: TextStyle(
@@ -55,7 +52,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 50,
                   ),
                   Container(
@@ -64,10 +61,10 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: Color.fromRGBO(0, 140, 68, 1),
+                        color: const Color.fromRGBO(0, 140, 68, 1),
                       ),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Submit',
                         style: TextStyle(
@@ -102,13 +99,14 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
           child: PageView(
-            controller: PageController(initialPage: 4),
+            controller: PageController(initialPage: 5),
             scrollDirection: Axis.horizontal,
-            children: [
+            children: const [
               Module01(),
               Module02(),
               Module03(),
               Module04(),
+              Module05(),
 
             ],
           ),
@@ -128,19 +126,19 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                 onTap: () {
                   Scaffold.of(context).openDrawer();
                 },
-                child: IconButton(
+                child: const IconButton(
                     onPressed: null,
                     icon: Icon(Icons.menu, color: Colors.black)))),
         IconButton(
             onPressed: () {},
-            icon: Icon(Icons.home_outlined, color: Colors.black)),
+            icon: const Icon(Icons.home_outlined, color: Colors.black)),
         IconButton(
             onPressed: () {},
-            icon: Icon(Icons.notifications_outlined, color: Colors.black)),
+            icon: const Icon(Icons.notifications_outlined, color: Colors.black)),
         IconButton(
             onPressed: () {},
-            icon: Icon(Icons.email_outlined, color: Colors.black)),
-        Spacer(),
+            icon: const Icon(Icons.email_outlined, color: Colors.black)),
+        const Spacer(),
 
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
@@ -150,7 +148,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                 padding: const EdgeInsets.only(right: 8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text(
                       'Aminul Islam',
                       style: TextStyle(
@@ -168,7 +166,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                   ],
                 ),
               ),
-              MyCircleAvatar(
+              const MyCircleAvatar(
                   radius: 22, imagePath: 'assets/images/userImage.png'),
             ],
           ),
