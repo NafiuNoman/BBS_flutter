@@ -22,41 +22,41 @@ class _Module01State extends State<Module01> {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
-              'Module 1: Household Information ',
+              'মডিউল ১: পরিচিতি ও খানার সার-সংক্ষেপ ',
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
           ),
-          const QuestionRow(questionNo: 'Q 1a:', question: 'Household Address'),
+          const QuestionRow(questionNo: 'Q 1a:', question: 'খানার ঠিকানা'),
           MyTextField(icon: Icons.edit,),
-          const QuestionRow(questionNo: 'Q 2a:', question: 'Sample Census Household no.'),
+          const QuestionRow(questionNo: 'Q 2a:', question: 'নমুনা শুমারিখানা নাম্বার'),
           MyTextField(),
-          const QuestionRow(questionNo: 'Q 2b:', question: 'Census Household no.'),
+          const QuestionRow(questionNo: 'Q 2b:', question: 'শুমারি খানা নাম্বার'),
           MyTextField(),
           const SizedBox(height: 10,),
           /////counter form start from here
-          const QuestionRow(questionNo: 'Q 3:', question: 'Household Members'),
+          const QuestionRow(questionNo: 'Q 3:', question: 'খানার সদস্য'),
 
           const DoubleCounterQuestion(
             number: '3a.',
-            question: 'Memner Usually live',
+            question: 'সদস্য সাধারণতঃ এ খানায় যারা বসবাস করেন',
           ),
           const DoubleCounterQuestion(
             number: '3b.',
             question:
-            'Members: People who usually live in the house but are currently absent',
+            'সদস্য সাধারণতঃ এ খানায় যারা বসবাস করেন কিন্তু বর্তমানে অনুপস্থিত',
           ),
           const DoubleCounterQuestion(
             number: '3c.',
-            question: 'Members of the household currently live abroad',
+            question: 'খানার সাধারণ  সদস্য বর্তমানে বিদেশে বসবাস করেন',
           ),
           const DoubleCounterQuestion(
             number: '3d.',
-            question: 'Guest',
+            question: 'অতিথি',
           ),
           const DoubleCounterQuestion(
             number: '3e.',
             question:
-            'Members of the household have gone abroad and returned (within the last 5 years)',
+            'খানার সাধারণত সদস্য বিদেশ গিয়েছিলেন এবং গত ৫ বছরের মধ্যে ফেরত এসেছেন',
           ),
           const SizedBox(height: 30,),
         ],

@@ -32,7 +32,7 @@ class _HomepageState extends State<Homepage> {
         ),
         title: RichText(
           text: const TextSpan(
-              text: 'Bangladesh Bureau of Statistics\n',
+              text: 'বাংলাদেশ পরিসংখ্যান ব্যুরো\n',
               style: TextStyle(
                 color: Color.fromRGBO(0, 140, 68, 1),
                 fontWeight: FontWeight.w700,
@@ -40,7 +40,7 @@ class _HomepageState extends State<Homepage> {
               ),
               children: [
                 TextSpan(
-                  text: 'Socio-Economic and Demographic Survey 2022 ',
+                  text: 'আর্থ-সামাজিক ও জনসংখ্যা সমীক্ষা  ২০২২ ',
                   style: TextStyle(
                       color: Color.fromRGBO(196, 22, 28, 1),
                       fontWeight: FontWeight.w700,
@@ -152,21 +152,21 @@ class _HomepageState extends State<Homepage> {
               Expanded(
                 flex: 3,
                 child: Column(
-                  children: [
-                    const MyCircleAvatar(
+                  children: const [
+                    MyCircleAvatar(
                       radius: 60,
                       // imagePath: 'assets/images/view_list_btn.png',
                       imagePath: 'assets/images/userImage.png',
                     ),
-                    const Text(
-                      'Aminul Islam',
+                    Text(
+                      'আমিনুল ইসলাম',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
                       ),
                     ),
-                    const Text(
-                      'Data Collector',
+                    Text(
+                      'তথ্য সংগ্রহকারী',
                       style: TextStyle(
                           fontWeight: FontWeight.w500, fontSize: 10, height: 1),
                     )
@@ -179,21 +179,21 @@ class _HomepageState extends State<Homepage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Text(
-                      'Bangladesh Bureau of Statistics',
+                      'বাংলাদেশ পরিসংখ্যান ব্যুরো',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
                           color: Color.fromRGBO(14, 86, 60, 1)),
                     ),
                     const Text(
-                      'Department of Statistics and Information Management',
+                      'পরিসংখ্যান ও তথ্য ব্যবস্থাপনা বিভাগ',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 10,
                           color: Color.fromRGBO(29, 66, 50, 1)),
                     ),
                     const Text(
-                      'Ministry of Planning',
+                      'পরিকল্পনা মন্ত্রণালয়',
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 12,
@@ -204,9 +204,9 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         // Text('Enumeration area: '),
-                        const EnumerationRow(
+                        EnumerationRow(
                           textStyle: TextStyle(
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700,
@@ -216,15 +216,15 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Data collected so far: ',
+                      children: const [
+                        Text(
+                          'এ পর্যন্ত তথ্য সংগ্রহ করেছেনঃ  ',
                           style: TextStyle(
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700,
                               fontSize: 12),
                         ),
-                        const Text('567 household',
+                        Text('৫৬৭ খানার',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
@@ -233,16 +233,16 @@ class _HomepageState extends State<Homepage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Data collection remains: ',
+                      children: const [
+                        Text(
+                          'তথ্য সংগ্রহ বাকী রয়েছেঃ ',
                           style: TextStyle(
                               fontSize: 12,
                               color: Color.fromRGBO(41, 42, 46, 1),
                               fontWeight: FontWeight.w700),
                         ),
-                        const Text(
-                          '190 Household',
+                        Text(
+                          '১৯০ খানার',
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
@@ -267,24 +267,24 @@ class _HomepageState extends State<Homepage> {
       children:  const [
         MainButton(
           page: DataCollectionPage(),
-          title: 'New Info',
+          title: 'নতুন তথ্য',
           imagePath: 'assets/images/mainbutton/newinfo.png',
         ),
 
         MainButton(
           page: DataCollectionListPage(),
-          title: 'View List',
+          title: 'তালিকা দেখুন',
           imagePath:'assets/images/mainbutton/viewlist.png',
         ),
 
         MainButton(
           page: Text('data'),
-          title: 'Data Sync',
+          title: 'ডেটা সিঙ্ক',
           imagePath: 'assets/images/mainbutton/datasync.png',
         ),
         MainButton(
           page: Text('data'),
-          title: 'Message',
+          title: 'মেসেজ',
           imagePath:'assets/images/mainbutton/message.png',
         ),
 
@@ -326,17 +326,19 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children:  [
-                    const InfoContainer(
+                  children:  const [
+                    InfoContainer(
                       imagePath:'assets/images/talley/talley1.png' ,
 
-                        title: 'General Household',
-                        count: '20'),
-                    const InfoContainer(
+                        title: 'সাধারণ খানা',
+
+                        count: '২০'),
+                    InfoContainer(
                       imagePath:'assets/images/talley/talley4.png' ,
 
-                        title: 'Institutional  Household',
-                        count: '2'),
+                        title: 'প্রাতিষ্ঠানিক খানা',
+
+                        count: '২'),
                   ],
                 ),
               ),
@@ -344,15 +346,15 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children:  [
-                    const InfoContainer(
+                  children:  const [
+                    InfoContainer(
                         imagePath:'assets/images/talley/talley2.png' ,
-                        title: 'Others',
-                        count: '06'),
-                    const InfoContainer(
+                        title: 'অন্যান্য খানা',
+                        count: '০৬'),
+                    InfoContainer(
                         imagePath: 'assets/images/talley/talley3.png',
-                        title: 'Total',
-                        count: '28'),
+                        title: 'সর্বমোট',
+                        count: '২৮'),
                   ],
                 ),
               ),
@@ -360,7 +362,7 @@ class _HomepageState extends State<Homepage> {
                 height: 10,
               ),
               const Text(
-                'Data Collected Area:',
+                'তথ্য সংগৃহীত এলাকাঃ',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
@@ -373,8 +375,8 @@ class _HomepageState extends State<Homepage> {
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                           blurStyle: BlurStyle.inner,
                           offset: Offset(0, 4),
                           color: Colors.black12,

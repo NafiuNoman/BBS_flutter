@@ -231,7 +231,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                'Profile information',
+                'প্রোফাইল তথ্য',
                 style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500),
               ),
               Padding(
@@ -239,8 +239,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 child: MyCircleAvatar(
                     radius: 60, imagePath: 'assets/images/userImage.png'),
               ),
-              Text('Aminul Islam', style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 15)),
-              Text('Data Collector', style: TextStyle(color: Colors.white,fontSize: 10)),
+              Text('আমিনুল ইসলাম', style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 15)),
+              Text('তথ্য সংগ্রহকারী', style: TextStyle(color: Colors.white,fontSize: 10)),
             ],
           ),
         ));
@@ -290,18 +290,18 @@ class _UserProfilePageState extends State<UserProfilePage> {
               children: const [
                 DataCollectionIndicator(
                   value: 0.5,
-                  btnLabel: 'Continue',
-                  areaTitle:'Area 01: Keranigonj' ,
+                  btnLabel: 'চালিয়ে যান',
+                  areaTitle:'গননা এলাকা ০১ঃ কেরানীগঞ্জ' ,
                 ),
                 DataCollectionIndicator(
                   value: 0.2,
-                  btnLabel: 'Continue',
-                  areaTitle: 'Area 02: Nowabgonj' ,
+                  btnLabel: 'চালিয়ে যান',
+                  areaTitle: 'গননা এলাকা ০২ঃ নওয়াবগঞ্জ' ,
                 ),
                 DataCollectionIndicator(
                   value: 1,
-                  btnLabel: 'View List',
-                  areaTitle: 'Area 06: Dohar',
+                  btnLabel: 'লিস্ট দেখুন',
+                  areaTitle: 'গননা এলাকা ০৬ঃ দোহার',
                 ),
               ],
             ),
