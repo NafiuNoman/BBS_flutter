@@ -21,24 +21,27 @@ class MyRadioList extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerLeft,
 
-        child: Wrap(
-          children: List.generate(
-            radioList.length,
-                (i) => Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Radio(
-                  value: radioList[i],
-                  groupValue: groupValue,
-                  onChanged: onChange,
-                ),
-                Text(
-                  radioList[i],
-                  style: TextStyle(fontSize: 12),
-                )
-              ],
+        child: Padding(
+          padding: const EdgeInsets.only(left: 14.0),
+          child: Wrap(
+            children: List.generate(
+              radioList.length,
+                  (i) => Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Radio(
+                    value: radioList[i],
+                    groupValue: groupValue,
+                    onChanged: onChange,
+                  ),
+                  Text(
+                    radioList[i],
+                    style: TextStyle(fontSize: 12),
+                  )
+                ],
+              ),
             ),
           ),
         ),

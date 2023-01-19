@@ -114,7 +114,7 @@ class _HomepageState extends State<Homepage> {
             // const SizedBox(height: 30),
 
             const Text(
-              'Tally sheet',
+              'ট্যালি শিট',
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 color: Color.fromRGBO(26, 66, 50, 1),
@@ -264,16 +264,18 @@ class _HomepageState extends State<Homepage> {
   Row fourButtonsSection() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children:  const [
+      children:   const [
         MainButton(
           page: DataCollectionPage(),
           title: 'নতুন তথ্য',
+          size: 49,
           imagePath: 'assets/images/mainbutton/newinfo.png',
         ),
 
         MainButton(
           page: DataCollectionListPage(),
           title: 'তালিকা দেখুন',
+          size: 49,
           imagePath:'assets/images/mainbutton/viewlist.png',
         ),
 

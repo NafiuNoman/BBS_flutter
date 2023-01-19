@@ -7,8 +7,14 @@ class MainButton extends StatelessWidget {
   final String title;
   final String imagePath;
   final Widget page;
+  final double? size;
 
-  const MainButton({super.key, required this.title,    required this.imagePath,  required this.page});
+  const MainButton(
+      {super.key,
+      required this.title,
+      required this.imagePath,
+      required this.page,
+      this.size = 55});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +22,13 @@ class MainButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: InkWell(
-          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>page));},
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => page));
+          },
           child: Container(
             decoration: buttonDecoration(),
             height: 80,
-
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
               child: Row(
@@ -33,7 +41,11 @@ class MainButton extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         color: Colors.white),
                   ),
-                  Image.asset(imagePath,width: 55,height: 55,),
+                  Image.asset(
+                    imagePath,
+                    width: size,
+                    height: size,
+                  ),
                 ],
               ),
             ),
@@ -50,13 +62,15 @@ class MainButton extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter),
       boxShadow: const [
-        BoxShadow(blurRadius: 5,blurStyle: BlurStyle.outer,),
+        BoxShadow(
+          blurRadius: 5,
+          blurStyle: BlurStyle.outer,
+        ),
         // BoxShadow(blurStyle: BlurStyle.outer,offset: Offset(0, 17),blurRadius: 35,color: Color.fromRGBO(
         //     1, 37, 22, 0.44),),
         // BoxShadow(blurStyle: BlurStyle.inner,offset: Offset(0, 7.83),blurRadius: 7.83,color: Color.fromRGBO(
         //     6, 239, 142, 1),),
       ],
-
       borderRadius: BorderRadius.circular(5),
     );
   }

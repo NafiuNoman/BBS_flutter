@@ -24,7 +24,8 @@ class DataCollectionIndicator extends StatelessWidget {
           child: customIndicator(),
         ),
         Text(
-          '${(value*100).round()}% complete',
+          // '${(value*100).round()}% complete',
+          '৫০% সম্পন্ন',
           style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
         ),
 
@@ -48,7 +49,7 @@ class DataCollectionIndicator extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Text(
-          'See Map',
+          'ম্যাপে দেখুন',
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
         ),
       ),

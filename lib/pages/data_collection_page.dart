@@ -28,7 +28,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              titleBanner(title: "Data Collection Page"),
+              titleBanner(title: "নমুনা শুমারি প্রশ্ন ও তথ্য সংগ্রহ"),
               //pageView
               const SizedBox(height: 10,),
               buildPageView(),
@@ -46,7 +46,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                         color: const Color.fromRGBO(0, 140, 68, 1)),
                     child: const Center(
                       child: Text(
-                        'Save as Draft',
+                        'খসড়া করুন',
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w600),
                       ),
@@ -66,7 +66,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                     ),
                     child: const Center(
                       child: Text(
-                        'Submit',
+                        'জমা দিন',
                         style: TextStyle(
                             color: Color.fromRGBO(0, 140, 68, 1),
                             fontWeight: FontWeight.w600),
@@ -150,14 +150,14 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Text(
-                      'Aminul Islam',
+                      'আমিনুল ইসলাম',
                       style: TextStyle(
                           color: Color.fromRGBO(107, 105, 105, 1),
                           fontSize: 11,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      'Data Collector',
+                      'তথ্য সংগ্রহকারী',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 9,

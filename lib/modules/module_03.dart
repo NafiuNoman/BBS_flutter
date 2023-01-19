@@ -13,7 +13,7 @@ class Module03 extends StatefulWidget {
 class _Module03State extends State<Module03> {
   String? q_10_groupValue;
 
-  List q_10_TitleListItem = ['Yes', 'No'];
+  List q_10_TitleListItem = ['হ্যাঁ', 'না'];
   List q_12_a_TitleListItem = ['Tap', 'Tubewell/ Deep tubewell','Well','Pond','River/Pond/Canal','Others'];
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _Module03State extends State<Module03> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Module 3: Food Information ',
+            'মডিউল ৩: খানা সংক্রান্ত',
             style: TextStyle(fontWeight: FontWeight.w700),
           ),
 

@@ -19,34 +19,34 @@ class _Module02State extends State<Module02> {
   String? q_09_groupValue;
   String? q_10_groupValue;
   List q_04_TitleListItem = [
-    'Separate',
-    'Apartment',
-    'Attached/Barrack House',
+    'আলাদা',
+    'এপার্টমেন্ট',
+    'সংযুক্ত/ব্যারাক হাউজ',
   ];
   List q_05_TitleListItem = [
-    'Straw/ Bamboo/ polyhtene/ plastic/ canvas',
-    'Soil/ Brick',
-    'Tin ( CICit)',
-    'Wood',
-    'Brick-Cement',
-    'Others'
+    'খড়/ বাঁশ/ পলিথিন/ প্লাস্টিক/ ক্যানভাস',
+    'মাটি/কাঁচা ইট',
+    'টিন (সিআইসিট)',
+    'কাঠ',
+    'ইট-সিমেন্ট',
+    'অন্যান্য'
   ];
   List q_06_TitleListItem = [
-    'Straw/ Bamboo/ polyhtene/ plastic/ canvas',
-    'Tin ( CICit)',
-    'Tally',
-    'Brick-Cement',
-    'Others'
+    'খড়/ বাঁশ/ পলিথিন/ প্লাস্টিক/ ক্যানভাস',
+    'টিন (সিআইসিট)',
+    'টালি',
+    'ইট-সিমেন্ট',
+    'অন্যান্য'
   ];
   List q_07_TitleListItem = [
-    'Soil',
-    'Wood/Bamboo',
-    'Brick-Cement',
-    'Mosaic-Tiles',
-    'Others'
+    'মাটি',
+    'কাঠ/বাঁশ',
+    'ইট-সিমেন্ট',
+    'মোজাইক/ টাইলস',
+    'অন্যান্য'
   ];
-  List q_09_TitleListItem = ['Yes', 'No'];
-  List q_10_TitleListItem = ['Yes', 'No'];
+  List q_09_TitleListItem = ['হ্যাঁ', 'না'];
+  List q_10_TitleListItem = ['হ্যাঁ', 'না'];
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +55,12 @@ class _Module02State extends State<Module02> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Module 2: Household Information ',
+            'মডিউল ২: গৃহ সংক্রান্ত',
             style: TextStyle(fontWeight: FontWeight.w700),
           ),
           QuestionRow(
             questionNo: 'Q 4:',
-            question: 'Household Type',
+            question: 'গৃহের প্রকার',
           ),
           MyRadioList(height: 50, radioList: q_04_TitleListItem, groupValue: q_04_groupValue, onChange: (value) {
               setState(() {
@@ -68,7 +68,7 @@ class _Module02State extends State<Module02> {
               });
             }),
           QuestionRow(
-              questionNo: 'Q 5:', question: 'Main household wall build with'),
+              questionNo: 'Q 5:', question: 'প্রধান গৃহের দেয়ালের উপকরণ'),
           MyRadioList(height: 90, radioList: q_05_TitleListItem, groupValue: q_05_groupValue, onChange: (value) {
               setState(() {
                 q_05_groupValue = value;
@@ -76,46 +76,46 @@ class _Module02State extends State<Module02> {
             }),
 
           QuestionRow(
-              questionNo: 'Q 6:', question: 'Main household roof build with'),
+              questionNo: 'Q 6:', question: 'প্রধান গৃহের ছাদের উপকরণ'),
           MyRadioList(height: 90, radioList: q_06_TitleListItem, groupValue: q_06_groupValue, onChange: (value) {
             setState(() {
               q_06_groupValue = value;
             });
           }),
           QuestionRow(
-              questionNo: 'Q 7:', question: 'Main household floor item'),
+              questionNo: 'Q 7:', question: ' প্রধান গৃহে্র মেঝের উপকরণ '),
           MyRadioList(height: 50, radioList: q_07_TitleListItem, groupValue: q_07_groupValue, onChange: (value) {
             setState(() {
               q_07_groupValue = value;
             });
           }),
-          QuestionRow(questionNo: 'Q 8:', question: 'Living Place'),
+          QuestionRow(questionNo: 'Q 8:', question:'বাসস্থান'),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
                   Text('a.',style: TextStyle(color:textColor,fontWeight: FontWeight.w600 ),),
-                  Text(' Total room number'),
+                  Text(' মোট কক্ষ সংখ্যা'),
                   SizedBox(width: 100,child: BoxPlusMinusBtn()),
                 ],
               ),
               Row(
                 children: [
                   Text('b.',style: TextStyle(color:textColor,fontWeight: FontWeight.w600 )),
-                  Text(' Bedroom number'),
+                  Text(' শোবার কক্ষ সংখ্যা'),
                   SizedBox(width: 100,child: BoxPlusMinusBtn()),
                 ],
               ),
             ],
           ),
-          QuestionRow(questionNo: 'Q 9:', question: 'Is this a slum?'),
+          QuestionRow(questionNo: 'Q 9:', question: 'ইহা কি বস্তিখানা? '),
           MyRadioList(height: 40, radioList: q_09_TitleListItem, groupValue: q_09_groupValue, onChange: (value) {
               setState(() {
                 q_09_groupValue = value;
               });
             }),
-          QuestionRow(questionNo: 'Q :', question: 'Cancellation Form'),
+          QuestionRow(questionNo: 'Q :', question: ' বাতিল ফরম '),
           MyRadioList(height: 30, radioList: q_10_TitleListItem, groupValue: q_10_groupValue, onChange: (value) {
               setState(() {
                 q_10_groupValue = value;

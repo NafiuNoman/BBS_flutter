@@ -18,18 +18,18 @@ class EnumerationRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Enumeration area: ',
+          'গণনা এলাকাঃ ',
           style: textStyle,
         ),
-        areaContainer('01'),
+        areaContainer('০১'),
         SizedBox(
           width: 5,
         ),
-        areaContainer('02'),
+        areaContainer('০২'),
         SizedBox(
           width: 5,
         ),
-        areaContainer('03'),
+        areaContainer('০৩'),
       ],
     );
   }

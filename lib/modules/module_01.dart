@@ -28,9 +28,9 @@ class _Module01State extends State<Module01> {
           ),
           const QuestionRow(questionNo: 'Q 1a:', question: 'খানার ঠিকানা'),
           MyTextField(icon: Icons.edit,),
-          const QuestionRow(questionNo: 'Q 2a:', question: 'নমুনা শুমারিখানা নাম্বার'),
+          const QuestionRow(questionNo: 'Q 2a:', question: 'নমুনা শুমারি খানা নম্বর'),
           MyTextField(),
-          const QuestionRow(questionNo: 'Q 2b:', question: 'শুমারি খানা নাম্বার'),
+          const QuestionRow(questionNo: 'Q 2b:', question: 'শুমারি খানা নম্বর'),
           MyTextField(),
           const SizedBox(height: 10,),
           /////counter form start from here
@@ -38,12 +38,12 @@ class _Module01State extends State<Module01> {
 
           const DoubleCounterQuestion(
             number: '3a.',
-            question: 'সদস্য সাধারণতঃ এ খানায় যারা বসবাস করেন',
+            question: 'সদস্য সাধারণত: এ খানায় বসবাস করেন',
           ),
           const DoubleCounterQuestion(
             number: '3b.',
             question:
-            'সদস্য সাধারণতঃ এ খানায় যারা বসবাস করেন কিন্তু বর্তমানে অনুপস্থিত',
+            'সদস্য সাধারণতঃ এ খানায় বসবাস করেন কিন্তু বর্তমানে অনুপস্থিত',
           ),
           const DoubleCounterQuestion(
             number: '3c.',
@@ -56,7 +56,7 @@ class _Module01State extends State<Module01> {
           const DoubleCounterQuestion(
             number: '3e.',
             question:
-            'খানার সাধারণত সদস্য বিদেশ গিয়েছিলেন এবং গত ৫ বছরের মধ্যে ফেরত এসেছেন',
+            'খানার সাধারণ সদস্য বিদেশ গিয়েছিলেন এবং গত ৫ বছরের মধ্যে ফেরত এসেছেন',
           ),
           const SizedBox(height: 30,),
         ],

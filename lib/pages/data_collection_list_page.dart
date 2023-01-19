@@ -40,7 +40,7 @@ class DataCollectionListPage extends StatelessWidget {
             Expanded(
                 flex: 2,
                 child: titleBanner(
-                  title: 'Survey Data Collection List',
+                  title: 'সার্ভে তথ্য তালিকা',
                 )),
             // Search and filter
             Expanded(
@@ -58,7 +58,7 @@ class DataCollectionListPage extends StatelessWidget {
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromRGBO(217, 217, 217, 1))),
-                        hintText: 'Search',
+                        hintText: 'অনুসন্ধান',
                         hintStyle: TextStyle(fontSize: 12),
                         suffixIcon: Icon(Icons.search),
                         filled: true,
@@ -69,7 +69,7 @@ class DataCollectionListPage extends StatelessWidget {
                     ),
                   ),
                   Spacer(
-                    flex: 7,
+                    flex: 6,
                   ),
                   // Filter
                   Flexible(
@@ -77,7 +77,7 @@ class DataCollectionListPage extends StatelessWidget {
                     fit: FlexFit.loose,
                     child: DropdownButtonFormField(
                       hint: Text(
-                        'Sort by',
+                        'ক্রমানুসারে সাজান',
                         style: TextStyle(fontSize: 11),
                       ),
                       decoration: InputDecoration(
@@ -145,30 +145,30 @@ class DataCollectionListPage extends StatelessWidget {
               dataRowColor: MaterialStateProperty.all(tableRowFillColor),
               border: TableBorder.all(color: tableStrokeColor,borderRadius: BorderRadius.circular(3),width: 2,style: BorderStyle.solid),
               columns: const [
-                DataColumn(label: Expanded(child: Text('Serial', textAlign: TextAlign.center))),
+                DataColumn(label: Expanded(child: Text('ক্রমিক নং', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
-                        child: Text('Date', textAlign: TextAlign.center))),
+                        child: Text('তারিখ', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
-                        child: Text('Enumeration Area',
+                        child: Text('গণনা এলাকা',
                             textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
                         child:
-                            Text('Household #', textAlign: TextAlign.center))),
+                            Text('খানার নাম্বার', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
-                        child: Text('Type', textAlign: TextAlign.center))),
+                        child: Text('প্রকার', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
-                        child: Text('Male', textAlign: TextAlign.center))),
+                        child: Text('পুরুষ', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
-                        child: Text('Female', textAlign: TextAlign.center))),
+                        child: Text('মহিলা', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
-                        child: Text('Status', textAlign: TextAlign.center))),
+                        child: Text('স্ট্যাটাস', textAlign: TextAlign.center))),
                 DataColumn(
                     label: Expanded(
                         child: Icon(Icons.menu, size: 15, color: Colors.white)))
@@ -243,14 +243,14 @@ class DataCollectionListPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Aminul Islam',
+                      'আমিনুল ইসলাম',
                       style: TextStyle(
                           color: Color.fromRGBO(107, 105, 105, 1),
                           fontSize: 11,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      'Data Collector',
+                      'তথ্য সংগ্রহকারী',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 9,

@@ -79,7 +79,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 const Padding(
                   padding: EdgeInsets.only(top: 8.0),
                   child: Text(
-                    'Statistic Information',
+                    'পরিসংখ্যান তথ্য',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: statusBarColor, fontWeight: FontWeight.w600),
@@ -102,13 +102,13 @@ class _UserProfilePageState extends State<UserProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Text(
-                  'Data collected so far: ',
+                  'এ পর্যন্ত তথ্য সংগ্রহ করেছেনঃ ',
                   style: TextStyle(
                       color: Color.fromRGBO(41, 42, 46, 1),
                       fontWeight: FontWeight.w600,
                       fontSize: 12),
                 ),
-                Text('567 household',
+                Text('৫৬৭ খানার',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 12,
@@ -119,14 +119,14 @@ class _UserProfilePageState extends State<UserProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Text(
-                  'Data collection remains: ',
+                  'তথ্য সংগ্রহ বাকী রয়েছেঃ ',
                   style: TextStyle(
                       fontSize: 12,
                       color: Color.fromRGBO(41, 42, 46, 1),
                       fontWeight: FontWeight.w600),
                 ),
                 Text(
-                  '190 Household',
+                  '১৯০ খানার',
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
@@ -156,7 +156,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromRGBO(217, 217, 217, 1))),
-                        hintText: 'Search',
+                        hintText: 'অনুসন্ধান',
                         hintStyle: const TextStyle(fontSize: 12),
                         suffixIcon: const Icon(Icons.search),
                         filled: true,
@@ -175,7 +175,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     fit: FlexFit.loose,
                     child: DropdownButtonFormField(
                       hint: const Text(
-                        'Enumerator Area',
+                        'গণনা এলাকা',
                         style: TextStyle(fontSize: 11),
                       ),
                       decoration: InputDecoration(

@@ -37,7 +37,7 @@ class _LogInPageState extends State<LogInPage> {
 
 
                 const Text(
-                  "User Login",
+                  "ব্যবহারকারী লগইন",
 
                   style: TextStyle(
 
@@ -77,7 +77,7 @@ class _LogInPageState extends State<LogInPage> {
                 SizedBox(
                   width: 300,
                   child: Text(
-                    e['text'],
+                    e['bn_text'],
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 11,fontWeight: FontWeight.w500,color: Colors.black.withOpacity(0.68)
                     ),
@@ -103,14 +103,14 @@ class _LogInPageState extends State<LogInPage> {
         const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'User ID',
+              'ব্যবহারকারীর আইডি',
             )),
         SizedBox(
           height: 60,
           child: TextFormField(
             controller: userIdController,
             decoration: InputDecoration(
-                hintText: 'Enter 7-8 digits ID',
+                hintText: '৭-৮ সংখ্যার আইডি লিখুন',
                 hintStyle: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
                 prefixIcon: Image.asset('assets/images/user.png'),
                 border: OutlineInputBorder(
@@ -128,14 +128,14 @@ class _LogInPageState extends State<LogInPage> {
         const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Password',
+              'পাসওয়ার্ড',
             )),
         SizedBox(
           height: 60,
           child: TextFormField(
             controller: passwordController,
             decoration: InputDecoration(
-                hintText: 'Enter Password',
+                hintText: 'পাসওয়ার্ড লিখুন',
                 hintStyle: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
                 prefixIcon: Image.asset('assets/images/lock.png'),
                 suffixIcon: InkWell(
@@ -174,7 +174,7 @@ class _LogInPageState extends State<LogInPage> {
               });
             }),
         Text(
-          'Remember Me',
+          'মনে রাখুন',
           style: TextStyle(color: Color.fromRGBO(107, 105, 105, 1)),
         )
       ],
@@ -184,7 +184,7 @@ class _LogInPageState extends State<LogInPage> {
   Align buildForgetPassword() => const Align(
       alignment: Alignment.topRight,
       child: Text(
-        'Forget Password?',
+        'পাসওয়ার্ড ভুলে গেছেন?',
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
       ));
 
@@ -207,7 +207,7 @@ class _LogInPageState extends State<LogInPage> {
         height: 60,
         child: const Center(
           child: Text(
-            'Login',
+            'লগইন করুন',
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.w600, fontSize: 20),
           ),
@@ -238,12 +238,12 @@ class _LogInPageState extends State<LogInPage> {
           ],
         ),
         Text(
-          'Bangladesh Bureau of Statistics',
+          'বাংলাদেশ পরিসংখ্যান ব্যুরো',
           style: TextStyle(
               color: statusBarColor, fontWeight: FontWeight.w700, fontSize: 18),
         ),
         Text(
-          'Socio-Economic and Demographic Survey 2022',
+          'আর্থ-সামাজিক ও জনসংখ্যা সমীক্ষা  ২০২২ ',
           style: TextStyle(
               color: Color.fromRGBO(196, 22, 28, 1),
               fontWeight: FontWeight.w700,

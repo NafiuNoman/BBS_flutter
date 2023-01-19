@@ -53,7 +53,7 @@ class DoubleCounterQuestion extends StatelessWidget {
               children: const [
                 BoxPlusMinusBtn(),
                 Text(
-                  'Male',
+                  'পুরুষ',
                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 11),
                 )
               ],
@@ -65,7 +65,7 @@ class DoubleCounterQuestion extends StatelessWidget {
                 children: const [
                   BoxPlusMinusBtn(),
                   Text(
-                    'Female',
+                    'মহিলা',
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 11),
                   )
                 ],
@@ -80,7 +80,7 @@ class DoubleCounterQuestion extends StatelessWidget {
                     child: const Center(child: Text('10',style: TextStyle(color: totalValueColor,fontSize: 12,fontWeight: FontWeight.bold),)),
                   ),
                   Text(
-                    'Total',
+                    'মোট',
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10),
                   ),
                 ],
