@@ -44,11 +44,11 @@ class _Module05State extends State<Module05> {
   ];
   List<String> q_44_item_list = [
     '1- Recruiter',
-    '2 - Employees ',
-    '3 - Self-employed - Agriculture ',
-    '4 - Self-employed - Non-agricultural',
-    '5 - Family Helper',
-    '6 - Others',
+    '2- Employees ',
+    '3- Self-employed - Agriculture ',
+    '4- Self-employed - Non-agricultural',
+    '5- Family Helper',
+    '6- Others',
   ];
 
   @override
@@ -246,6 +246,7 @@ class _Module05State extends State<Module05> {
             questionNo: 'Q 48:',
             question: 'নাম - আয়ের জন্য কোন কাজ খুঁজছেন কি?',
           ),
+
           MyRadioList(
               height: 50,
               radioList: ['হ্যাঁ', 'না'],

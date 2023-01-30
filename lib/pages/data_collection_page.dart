@@ -5,6 +5,7 @@ import '../modules/module_02.dart';
 import '../modules/module_03.dart';
 import '../modules/module_04.dart';
 import '../modules/module_05.dart';
+import '../modules/module_06.dart';
 import '../widgets/my_circular_avatar.dart';
 
 class DataCollectionPage extends StatefulWidget {
@@ -99,7 +100,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
           child: PageView(
-            controller: PageController(initialPage: 5),
+            controller: PageController(initialPage: 3),
             scrollDirection: Axis.horizontal,
             children: const [
               Module01(),
@@ -107,6 +108,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
               Module03(),
               Module04(),
               Module05(),
+              Module06(),
 
             ],
           ),

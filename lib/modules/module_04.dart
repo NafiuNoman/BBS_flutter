@@ -1,7 +1,9 @@
 import 'package:bbs_app/widgets/my_radio_list.dart';
 import 'package:flutter/material.dart';
 
+import '../styles/common_colors.dart';
 import '../widgets/my_drop_down.dart';
+import '../widgets/my_section_heading.dart';
 import '../widgets/my_text_field.dart';
 import '../widgets/question_row.dart';
 
@@ -16,11 +18,21 @@ class _Module04State extends State<Module04> {
   bool isVisibility = false;
   String q_32a_value = '';
   String q_24a_value = '';
+  String q_32c_value = '';
+  String q_33b_value = '';
+  String q_34a_value = '';
+  String q_34c_value = '';
+  String q_35_value = '';
+  String q_36_value = '';
+
+  String q_37_value = '';
+
+  String q_39_value = '';
 
   void dropDownCallBack(String text) {
     q_32a_value = text;
     setState(() {
-      text == '1. Same District' ? isVisibility = true : isVisibility = false;
+      text == '1- একই জেলা' ? isVisibility = true : isVisibility = false;
     });
   }
 
@@ -46,15 +58,19 @@ class _Module04State extends State<Module04> {
     '8. Other relatives',
     '9. Inanimate'
   ];
-  List<String> q_32_item_list = [
-    '1. Same District',
-    '2. Different District ',
-    '3. Different Country',
+  List<String> q_32a_item_list = [
+    '1- একই জেলা',
+    '2- অন্য জেলা',
+    '3- অন্য দেশ',
+  ];
+  List<String> q_34a_item_list = [
+    '1- একই জেলা',
+    '2- অন্য জেলা',
+    '3- অন্য দেশ',
   ];
 
   @override
   Widget build(BuildContext context) {
-    print('form build..$q_24a_value');
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -129,9 +145,7 @@ class _Module04State extends State<Module04> {
             items: q_24_item_list,
             dropDownCallback: (String text) {
               setState(() {
-
                 q_24a_value = text;
-
               });
             },
           ),
@@ -155,7 +169,7 @@ class _Module04State extends State<Module04> {
           ),
           MyRadioList(
               height: 30,
-              radioList: ['হ্যাঁ', 'না'],
+              radioList: const ['হ্যাঁ', 'না'],
               groupValue: q_26_groupValue,
               onChange: (value) {
                 setState(() {
@@ -239,21 +253,66 @@ class _Module04State extends State<Module04> {
             question: 'জন্মস্থান কোথায়?',
           ),
           MyDropDown(
-            items: q_32_item_list,
+            items: q_32a_item_list,
             dropDownCallback: (String text) {
               q_32a_value = text;
               setState(() {
-                text == '1. Same District'
+                text == '1- একই জেলা'
                     ? isVisibility = true
                     : isVisibility = false;
               });
             },
           ),
+
+          const QuestionRow(
+            questionNo: 'Q 32 b:',
+            question: 'অন্য জেলা/ দেশের কোড? ',
+          ),
+          MyTextField(
+            width: 120,
+            icon: Icons.edit,
+          ),
+
+          const QuestionRow(
+            questionNo: 'Q 32 c:',
+            question: 'জন্মস্থানের এলাকা?  ',
+          ),
+          MyDropDown(
+            items: const [
+              '১- পল্লী এলাকা',
+              '২ - মেট্রোপলিটন এলাকা ',
+              '৩ - অন্যান্য শহর এলাকা'
+            ],
+            dropDownCallback: (String text) {
+              setState(() {
+                q_32c_value = text;
+              });
+            },
+          ),
+
           Visibility(
             visible: isVisibility,
-            child: const QuestionRow(
-              questionNo: 'Q 33 a:',
-              question: 'এ জেলায় কত বছর বসবাস করেন',
+            child:   Row(
+              children: const [
+                Text(
+                  'Q 33 a:',
+                  style: TextStyle(color: textColor, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  'এ জেলায় কত বছর বসবাস করেন',
+                  style: TextStyle(color: textColor, fontWeight: FontWeight.w600),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "(পূর্ণ বছরে)",
+                    style: TextStyle(
+                        color: textColor,
+                        fontWeight: FontWeight.w100,
+                        fontSize: 12),
+                  ),
+                )
+              ],
             ),
           ),
           Visibility(
@@ -263,18 +322,157 @@ class _Module04State extends State<Module04> {
                   left: 20.0, top: 5, right: 8, bottom: 8),
               child: SizedBox(
                 width: 120,
-                child: MyTextField(inputType: TextInputType.number,icon: Icons.edit,),
+                child: MyTextField(
+                  inputType: TextInputType.number,
+                  icon: Icons.edit,
+                ),
               ),
             ),
           ),
+          const QuestionRow(
+            questionNo: 'Q 33 b:',
+            question: ' এ জেলায় আসার প্রধান কারণ ',
+          ),
+          MyDropDown(
+              items: const [
+                '১-বিবাহ',
+                '২-শিক্ষা',
+                '৩-চাকুরী/ব্যবসা',
+                '৪-কাজের খোজে',
+                '৫-প্রাকৃতিক দুর্যোগ',
+                '৬-পারিবারিক কলহ',
+                '৭-অত্যাচারিত/ স্বামী বা স্ত্রী কর্তৃক পরিত্যক্ত',
+                '৮-অন্যান্য'
+              ],
+              dropDownCallback: (String text) {
+                setState(() {
+                  q_33b_value = text;
+                });
+              }),
+          const QuestionRow(
+            questionNo: '34.',
+            question: ' পাঁচ বছর পূর্বের অবস্থান',
+          ),
+          const QuestionRow(
+            questionNo: 'Q 34 a:',
+            question: ' পাঁচ বছর পূর্বে কোথায় বসবাস করতেন?',
+          ),
+          MyDropDown(
+            items: q_34a_item_list,
+            dropDownCallback: (String text) {
+              setState(() {
+                q_34a_value = text;
+              });
+            },
+          ),
+          const QuestionRow(
+            questionNo: 'Q 34 b:',
+            question: 'অন্য জেলা/ অন্য দেশ',
+          ),
+          MyTextField(icon: Icons.edit,width: 120,),
+          const QuestionRow(
+            questionNo: 'Q 34 c:',
+            question: 'বাসস্থানের এলাকা?',
+          ),
+          MyDropDown(
+            items: const [
+              '১- পল্লী এলাকা',
+              '২ - মেট্রোপলিটন এলাকা ',
+              '৩ - অন্যান্য শহর এলাকা'
+            ],
+            dropDownCallback: (String text) {
+              setState(() {
+                q_34c_value = text;
+              });
+            },
+          ),
 
-          ///TODO:  34-39
+          const MySectionHeading(heading: '৩ বছর ও তদূর্ধ্ব বয়সের সদস্যদের জন্য ( 35 - 36)',),
+          const QuestionRow(
+            questionNo: 'Q 35:',
+            question: 'বর্তমানে লেখাপড়া করছেন কি?',
+          ),
+          MyDropDown(
+            items: const [
+              '০- করছেন না',
+              '১- প্রাক-প্রাথমিক',
+              '২- প্রাথমিক',
+              '৩- নিম্ন মাধ্যমিক',
+              '৪- মাধ্যমিক/ উচ্চ মাধ্যমিক',
+              '৫- স্নাতক',
+              '৬- স্নাতকুত্তর'
+            ],
+            dropDownCallback: (String text) {
+              setState(() {
+                q_35_value = text;
+              });
+            },
+          ),
+
+          const QuestionRow(
+            questionNo: 'Q 36:',
+            question: 'কোন প্রকারের শিক্ষা প্রতিষ্ঠানে লেখাপড়া করছেন?',
+          ),
+          MyDropDown(
+            items: const [
+              '১- সরকারি',
+              '২ - বেসরকারি / এমপিওভুক্ত ',
+              '৩ - ধর্মীয়',
+              '৪ - উপানুস্ঠানিক',
+              '৫ - অন্যান্য'
+            ],
+            dropDownCallback: (String text) {
+              setState(() {
+                q_36_value = text;
+              });
+            },
+          ),
+
+          const MySectionHeading(heading: '৭ বছর ও তদূর্ধ্ব বয়সের সদস্যদের জন্য (37 - 39)',),
+          const QuestionRow(
+            questionNo: 'Q 37:',
+            question: 'চিঠি পড়তে ও লিখতে পারেন কিনা?',
+          ),
+          MyDropDown(
+            items: const [
+              '১- পড়তে ও লিখতে পারে না',
+              '২ - শুধু পড়তে পারে ',
+              '৩ - পড়তে ও লিখতে পারে'
+            ],
+            dropDownCallback: (String text) {
+              setState(() {
+                q_37_value = text;
+              });
+            },
+          ),
+
+          const QuestionRow(
+            questionNo: 'Q 38:',
+            question: 'সর্বোচ্চ শ্রেণি পাস',
+          ),
+          MyTextField(
+            width: 120,
+            icon: Icons.edit,
+          ),
+
+          const QuestionRow(
+            questionNo: 'Q 39:',
+            question: 'শিক্ষার ক্ষেত্র',
+          ),
+          MyDropDown(
+            items: const ['১- সাধারণ', '২ - টেকনিক্যাল / ভোকেশনাল ', '৩ - ধর্মীয়'],
+            dropDownCallback: (String text) {
+              setState(() {
+                q_39_value = text;
+              });
+            },
+          )
+
         ],
       ),
     );
   }
 }
-
 
 
 // 'Muslim',
@@ -290,4 +488,3 @@ class _Module04State extends State<Module04> {
 // ক্রমানুসারে প্রথমে খানা প্রধান, তারপর স্ত্রী/ স্বামী, ছোট সন্তান হতে শরু করে বড় সন্তান, অন্যান্য আত্মীয় এবং আত্মীয়ের নাম লিখুন।)
 // ( Enter the names of all the members who usually live in this house. Write the member's nickname in English capital letters. Write the names of the head of household first, then wife/husband, younger children to older children, other
 // relatives and non-relatives in order.)
-

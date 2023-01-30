@@ -12,6 +12,7 @@ class Module02 extends StatefulWidget {
 }
 
 class _Module02State extends State<Module02> {
+
   String? q_04_groupValue;
   String? q_05_groupValue;
   String? q_06_groupValue;
@@ -50,15 +51,17 @@ class _Module02State extends State<Module02> {
 
   @override
   Widget build(BuildContext context) {
+
+    print('moudle 2');
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
+          const Text(
             'মডিউল ২: গৃহ সংক্রান্ত',
             style: TextStyle(fontWeight: FontWeight.w700),
           ),
-          QuestionRow(
+          const QuestionRow(
             questionNo: 'Q 4:',
             question: 'গৃহের প্রকার',
           ),
@@ -67,7 +70,7 @@ class _Module02State extends State<Module02> {
                 q_04_groupValue = value;
               });
             }),
-          QuestionRow(
+          const QuestionRow(
               questionNo: 'Q 5:', question: 'প্রধান গৃহের দেয়ালের উপকরণ'),
           MyRadioList(height: 90, radioList: q_05_TitleListItem, groupValue: q_05_groupValue, onChange: (value) {
               setState(() {
@@ -75,33 +78,33 @@ class _Module02State extends State<Module02> {
               });
             }),
 
-          QuestionRow(
+          const QuestionRow(
               questionNo: 'Q 6:', question: 'প্রধান গৃহের ছাদের উপকরণ'),
           MyRadioList(height: 90, radioList: q_06_TitleListItem, groupValue: q_06_groupValue, onChange: (value) {
             setState(() {
               q_06_groupValue = value;
             });
           }),
-          QuestionRow(
+          const QuestionRow(
               questionNo: 'Q 7:', question: ' প্রধান গৃহে্র মেঝের উপকরণ '),
           MyRadioList(height: 50, radioList: q_07_TitleListItem, groupValue: q_07_groupValue, onChange: (value) {
             setState(() {
               q_07_groupValue = value;
             });
           }),
-          QuestionRow(questionNo: 'Q 8:', question:'বাসস্থান'),
+          const QuestionRow(questionNo: 'Q 8:', question:'বাসস্থান'),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: [
+                children: const [
                   Text('a.',style: TextStyle(color:textColor,fontWeight: FontWeight.w600 ),),
                   Text(' মোট কক্ষ সংখ্যা'),
                   SizedBox(width: 100,child: BoxPlusMinusBtn()),
                 ],
               ),
               Row(
-                children: [
+                children: const [
                   Text('b.',style: TextStyle(color:textColor,fontWeight: FontWeight.w600 )),
                   Text(' শোবার কক্ষ সংখ্যা'),
                   SizedBox(width: 100,child: BoxPlusMinusBtn()),
@@ -109,13 +112,13 @@ class _Module02State extends State<Module02> {
               ),
             ],
           ),
-          QuestionRow(questionNo: 'Q 9:', question: 'ইহা কি বস্তিখানা? '),
+          const QuestionRow(questionNo: 'Q 9:', question: 'ইহা কি বস্তিখানা? '),
           MyRadioList(height: 40, radioList: q_09_TitleListItem, groupValue: q_09_groupValue, onChange: (value) {
               setState(() {
                 q_09_groupValue = value;
               });
             }),
-          QuestionRow(questionNo: 'Q :', question: ' বাতিল ফরম '),
+          const QuestionRow(questionNo: 'Q :', question: ' বাতিল ফরম '),
           MyRadioList(height: 30, radioList: q_10_TitleListItem, groupValue: q_10_groupValue, onChange: (value) {
               setState(() {
                 q_10_groupValue = value;
