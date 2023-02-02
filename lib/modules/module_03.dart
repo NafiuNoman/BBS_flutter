@@ -1,4 +1,4 @@
-import 'package:bbs_app/widgets/box_plus_minus_btn.dart';
+import 'package:bbs_app/widgets/my_disable_container.dart';
 import 'package:bbs_app/widgets/my_section_heading.dart';
 import 'package:flutter/material.dart';
 
@@ -102,8 +102,10 @@ class _Module03State extends State<Module03> {
         const QuestionRow(questionNo: 'Q 12:', question: 'খাবার পানি'),
         const QuestionRow(
             questionNo: 'Q 12 a: ', question: 'খাবার পানির প্রধান উৎস'),
-        MyCheckBox(height: 90,checkList: q_12a_CheckList,),
-
+        MyCheckBox(
+          height: 90,
+          checkList: q_12a_CheckList,
+        ),
         const QuestionRow(
             questionNo: 'Q 12 b:',
             question: 'এ খানায় বোতল/ ফিল্টার/ সিদ্ধ পানি পান করে কি?'),
@@ -113,63 +115,82 @@ class _Module03State extends State<Module03> {
             groupValue: q_12b_groupValue,
             onChange: (value) {
               setState(() {
-                q_18a_groupValue = value;
+                q_12b_groupValue = value;
               });
             }),
         const QuestionRow(
             questionNo: 'Q 12 c:', question: 'পানির উৎসের দূরত্ব'),
-        MyCheckBox(height: 45,checkList: q_12c_CheckList,),
+        MyCheckBox(
+          height: 45,
+          checkList: q_12c_CheckList,
+        ),
         const QuestionRow(questionNo: 'Q 13: ', question: 'পায়খানার প্রকার'),
-        MyCheckBox(height: 90,checkList: q_13_CheckList,),
-
+        MyCheckBox(
+          height: 90,
+          checkList: q_13_CheckList,
+        ),
         const QuestionRow(
             questionNo: 'Q 14: ', question: 'কঠিন বজ্র পরিষ্কার ব্যবস্থাপনা'),
-        MyCheckBox(height: 90,checkList: q_14_CheckList,),
-
+        MyCheckBox(
+          height: 90,
+          checkList: q_14_CheckList,
+        ),
         const QuestionRow(questionNo: 'Q 15: ', question: 'আলোর উৎস'),
-        MyCheckBox(height: 90,checkList: q_15_CheckList,),
-
+        MyCheckBox(
+          height: 90,
+          checkList: q_15_CheckList,
+        ),
         const QuestionRow(questionNo: 'Q 16: ', question: 'রান্নার জ্বালানী'),
-        MyCheckBox(height: 90,checkList: q_16_CheckList,),
-
+        MyCheckBox(
+          height: 90,
+          checkList: q_16_CheckList,
+        ),
         const QuestionRow(
             questionNo: 'Q 17: ',
             question:
                 'খানার কতজন পুরুষ ও মহিলা সদস্য পত্রিকা পড়ে, রেডিও শুনে, টেলিভিশান দেখে অথবা ইন্টারনেট  ব্যবহার করে?'),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('a. পত্রিকা পড়ে '),
+          children: const [
+            Text('a. পত্রিকা পড়ে '),
             Spacer(),
-            const MaleFemaleCounterBox(),
-            SizedBox(width: 35,)
+            MaleFemaleCounterBox(),
+            SizedBox(
+              width: 35,
+            )
           ],
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('b. রেডিও শুনে'),
+          children: const [
+            Text('b. রেডিও শুনে'),
             Spacer(),
-            const MaleFemaleCounterBox(),
-            SizedBox(width: 35,)
+            MaleFemaleCounterBox(),
+            SizedBox(
+              width: 35,
+            )
           ],
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('c.টেলিভিশন দেখে'),
+          children: const [
+            Text('c.টেলিভিশন দেখে'),
             Spacer(),
-            const MaleFemaleCounterBox(),
-            SizedBox(width: 35,)
+            MaleFemaleCounterBox(),
+            SizedBox(
+              width: 35,
+            )
           ],
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('d. ইন্টারনেট ব্যবহার করে'),
+          children: const [
+            Text('d. ইন্টারনেট ব্যবহার করে'),
             Spacer(),
-            const MaleFemaleCounterBox(),
-            SizedBox(width: 35,)
+            MaleFemaleCounterBox(),
+            SizedBox(
+              width: 35,
+            )
           ],
         ),
         const MySectionHeading(
@@ -184,28 +205,52 @@ class _Module03State extends State<Module03> {
                 q_18a_groupValue = value;
               });
             }),
-        const QuestionRow(
-            questionNo: 'Q 18 b: ',
-            question: 'উত্তর হ্যাঁ হলে কয়জনের নিজস্ব বাড়ি আছে?'),
-        const MaleFemaleCounterBox(),
-        const QuestionRow(questionNo: 'Q 19 a: ', question: 'জমি?'),
-        MyRadioList(
-            height: 40,
-            radioList: q_19a_TitleListItem,
-            groupValue: q_19a_groupValue,
-            onChange: (value) {
-              setState(() {
-                q_18a_groupValue = value;
-              });
-            }),
-        const QuestionRow(
-            questionNo: 'Q 19 b: ',
-            question: 'উত্তর হ্যাঁ হলে কয়জনের নিজস্ব জমি আছে?'),
-        const MaleFemaleCounterBox(),
+        MyDisableContainer(
+          isIgnore: q_18a_groupValue == 'হ্যাঁ' ? false : true,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              QuestionRow(
+                  questionNo: 'Q 18 b: ',
+                  question: 'উত্তর হ্যাঁ হলে কয়জনের নিজস্ব বাড়ি আছে?'),
+              MaleFemaleCounterBox(),
+            ],
+          ),
+        ),
+        MyDisableContainer(
+            isIgnore: q_18a_groupValue == 'না' ? false : true,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const QuestionRow(questionNo: 'Q 19 a: ', question: 'জমি?'),
+                MyRadioList(
+                    height: 40,
+                    radioList: q_19a_TitleListItem,
+                    groupValue: q_19a_groupValue,
+                    onChange: (value) {
+                      setState(() {
+                        q_19a_groupValue = value;
+                      });
+                    }),
+              ],
+            )),
+        MyDisableContainer(
+          isIgnore:q_19a_groupValue== 'হ্যাঁ' ? false : true ,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              QuestionRow(
+                  questionNo: 'Q 19 b: ',
+                  question: 'উত্তর হ্যাঁ হলে কয়জনের নিজস্ব জমি আছে?'),
+              MaleFemaleCounterBox(),
+            ],
+          ),
+        ),
+
         const QuestionRow(
             questionNo: 'Q 20: ',
             question:
-                'এ খানায় নিজস্ব আছে কি? ( প্রতিটি আইটেমের জন্য প্রশ্ন করুন। উত্তর হ্যাঁ হলে “হ্যাঁ” চেকবক্সে এবং না হলে “না” চেকবক্সে ক্রস দিন)'),
+                'এ খানায় নিজস্ব আছে কি? (প্রতিটি আইটেমের জন্য প্রশ্ন করুন। উত্তর হ্যাঁ হলে “হ্যাঁ” চেকবক্সে এবং না হলে “না” চেকবক্সে ক্রস দিন)'),
         Row(
           children: [
             const Text('1. নৌকা'),
@@ -213,7 +258,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -228,7 +273,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -243,7 +288,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -258,7 +303,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -273,7 +318,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -288,7 +333,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -303,7 +348,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -318,7 +363,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -333,7 +378,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -348,7 +393,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -363,7 +408,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -378,7 +423,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -393,7 +438,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -408,7 +453,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(
@@ -423,7 +468,7 @@ class _Module03State extends State<Module03> {
             MyRadioList(
                 nextBtnGap: 25,
                 height: 30,
-                radioList: ['হ্যাঁ', 'না'],
+                radioList: const ['হ্যাঁ', 'না'],
                 groupValue: 'না',
                 onChange: (value) {}),
             const SizedBox(

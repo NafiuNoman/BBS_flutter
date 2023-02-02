@@ -5,7 +5,7 @@ class MyTextField extends StatelessWidget {
  final double? width;
  final TextInputType? inputType;
 
-   MyTextField({
+   const MyTextField({
     Key? key, this.icon, this.width, this.inputType=TextInputType.text,
   }) : super(key: key);
 

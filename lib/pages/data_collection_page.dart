@@ -1,3 +1,6 @@
+import 'package:bbs_app/modules/module_08.dart';
+import 'package:bbs_app/modules/module_09.dart';
+import 'package:bbs_app/modules/module_10.dart';
 import 'package:bbs_app/styles/title_banner.dart';
 import 'package:flutter/material.dart';
 import '../modules/module_01.dart';
@@ -6,6 +9,7 @@ import '../modules/module_03.dart';
 import '../modules/module_04.dart';
 import '../modules/module_05.dart';
 import '../modules/module_06.dart';
+import '../modules/module_07.dart';
 import '../widgets/my_circular_avatar.dart';
 
 class DataCollectionPage extends StatefulWidget {
@@ -100,7 +104,8 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
           child: PageView(
-            controller: PageController(initialPage: 3),
+            controller: PageController(initialPage: 9),
+            //initialPage start from 0; Example module 7 will be 6 here
             scrollDirection: Axis.horizontal,
             children: const [
               Module01(),
@@ -109,6 +114,10 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
               Module04(),
               Module05(),
               Module06(),
+              Module07(),
+              Module08(),
+              Module09(),
+              Module10(),
 
             ],
           ),

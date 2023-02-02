@@ -18,7 +18,6 @@ class MyRadioList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('$groupValue');
     return SizedBox(
       height: height,
       child: Align(
@@ -48,7 +47,7 @@ class MyRadioList extends StatelessWidget {
                     ),
                     Text(
                       radioList[i],
-                      style: TextStyle(fontSize: 12),
+                      style: const TextStyle(fontSize: 12),
                     ),
                     SizedBox(
                       width: nextBtnGap,
