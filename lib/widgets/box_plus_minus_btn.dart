@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const borderColor = Color.fromRGBO(153, 153, 153, 1);
 const valueColor = Color.fromRGBO(0, 148, 68, 1);
 
-
 // FaIcon(FontAwesomeIcons.circleMinus,size: 16,)
 
- Decoration plusMinusBoxDecoration = BoxDecoration(
+Decoration plusMinusBoxDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(4),
   border: Border.all(
       width: 1.5, strokeAlign: StrokeAlign.inside, color: borderColor),
@@ -37,26 +35,37 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
               fit: FlexFit.loose,
               child: IconButton(
                 padding: EdgeInsets.zero,
-                  onPressed: _deCremnt,
-                  icon: Icon(Icons.remove_circle_outline_outlined,size: 19,),color: Color.fromRGBO(73, 73, 73, 0.7), ),
+                onPressed: _deCremnt,
+                icon: const Icon(
+                  Icons.remove_circle_outline_outlined,
+                  size: 19,
+                ),
+                color: const Color.fromRGBO(73, 73, 73, 0.7),
+              ),
             ),
             Flexible(
               fit: FlexFit.loose,
               child: Text(
                 _value.toString(),
                 textAlign: TextAlign.center,
-                style: TextStyle(color:valueColor,fontSize: 12,fontWeight: FontWeight.w500),
+                style: const TextStyle(
+                    color: valueColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
               ),
             ),
-             Flexible(
-               fit: FlexFit.loose,
-               child: IconButton(
-                 padding: EdgeInsets.zero,
+            Flexible(
+              fit: FlexFit.loose,
+              child: IconButton(
+                padding: EdgeInsets.zero,
                 onPressed: _inCrement,
-                icon: Icon(Icons.add_circle_outline_outlined,size: 19,),
-                color: Color.fromRGBO(73, 73, 73, 0.7),
+                icon: const Icon(
+                  Icons.add_circle_outline_outlined,
+                  size: 19,
+                ),
+                color: const Color.fromRGBO(73, 73, 73, 0.7),
+              ),
             ),
-             ),
           ],
         ),
       ),

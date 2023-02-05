@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'box_plus_minus_btn.dart';
- const textColor =  Color.fromRGBO(73, 73, 73, 1);
+
+const textColor = Color.fromRGBO(73, 73, 73, 1);
 const totalValueColor = Color.fromRGBO(0, 148, 68, 1);
 
 class DoubleCounterQuestion extends StatelessWidget {
@@ -24,29 +25,46 @@ class DoubleCounterQuestion extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Text(
-              'Q $number',style: const TextStyle( color: textColor,
-                fontWeight: FontWeight.w600),
+              'Q $number',
+              style: const TextStyle(
+                  color: textColor, fontWeight: FontWeight.w600),
             ),
           ),
-          // Expanded(
-          //   flex: 1,
-          //   child: Text(
-          //     number,
-          //     textAlign: TextAlign.start,
-          //   ),
-          // ),
+
           Expanded(
-              flex: 10,
-              child: Text(question,
-                  textAlign: TextAlign.start,
-                  style: const TextStyle(
-                    color: textColor,
-                    fontWeight: FontWeight.w400,
-                    // fontFamily: 'Hind',
-
-
-
-                  ),),),
+            flex: 10,
+            child: Text(
+              question,
+              textAlign: TextAlign.start,
+              style: const TextStyle(
+                color: textColor,
+                fontWeight: FontWeight.w400,
+                // fontFamily: 'Hind',
+              ),
+            ),
+          ),
+          Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  Container(
+                    height: 35,
+                    decoration: plusMinusBoxDecoration,
+                    child: const Center(
+                        child: Text(
+                      '00',
+                      style: TextStyle(
+                          color: totalValueColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                  const Text(
+                    'মোট',
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10),
+                  ),
+                ],
+              )),
           Expanded(
             flex: 3,
             child: Column(
@@ -68,21 +86,6 @@ class DoubleCounterQuestion extends StatelessWidget {
                     'মহিলা',
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 11),
                   )
-                ],
-              )),
-          Expanded(
-              flex: 1,
-              child: Column(
-                children: [
-                  Container(
-                    height: 35,
-                    decoration: plusMinusBoxDecoration,
-                    child: const Center(child: Text('10',style: TextStyle(color: totalValueColor,fontSize: 12,fontWeight: FontWeight.bold),)),
-                  ),
-                  Text(
-                    'মোট',
-                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10),
-                  ),
                 ],
               )),
         ],

@@ -1,4 +1,6 @@
+import 'package:bbs_app/widgets/my_disable_container.dart';
 import 'package:bbs_app/widgets/my_radio_list.dart';
+import 'package:bbs_app/widgets/question_row_with_note.dart';
 import 'package:flutter/material.dart';
 
 import '../styles/common_colors.dart';
@@ -108,7 +110,6 @@ class _Module04State extends State<Module04> {
           MyTextField(
             icon: Icons.edit,
           ),
-
           Row(
             children: const [
               Text(
@@ -135,12 +136,10 @@ class _Module04State extends State<Module04> {
             width: 120,
             icon: Icons.edit,
           ),
-
           const QuestionRow(
             questionNo: 'Q 24:',
             question: ' খানা প্রধানের সাথে সম্পর্ক ',
           ),
-
           MyDropDown(
             items: q_24_item_list,
             dropDownCallback: (String text) {
@@ -149,7 +148,6 @@ class _Module04State extends State<Module04> {
               });
             },
           ),
-
           const QuestionRow(
             questionNo: 'Q 25:',
             question: 'লিঙ্গ',
@@ -176,7 +174,6 @@ class _Module04State extends State<Module04> {
                   q_26_groupValue = value;
                 });
               }),
-
           const QuestionRow(
             questionNo: 'Q 27:',
             question: 'মা কি জীবিত?',
@@ -190,19 +187,31 @@ class _Module04State extends State<Module04> {
                   q_27_groupValue = value;
                 });
               }),
-          const QuestionRow(
-            questionNo: 'Q 28:',
-            question: 'বাবা কি জীবিত?',
-          ),
-          MyRadioList(
-              height: 50,
-              radioList: const ['হ্যাঁ', 'না', 'জানি না'],
-              groupValue: q_28_groupValue,
-              onChange: (value) {
-                setState(() {
-                  q_28_groupValue = value;
-                });
-              }),
+          MyDisableContainer(
+              isIgnore: q_26_groupValue=='হ্যাঁ'?false:true,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  const QuestionRow(
+                    questionNo: 'Q 28:',
+                    question: 'বাবা কি জীবিত?',
+                  ),
+                  MyRadioList(
+                      height: 50,
+                      radioList: const ['হ্যাঁ', 'না', 'জানি না'],
+                      groupValue: q_28_groupValue,
+                      onChange: (value) {
+                        setState(() {
+                          q_28_groupValue = value;
+                        });
+                      }),
+
+
+                ],
+              )),
+
           const QuestionRow(
             questionNo: 'Q 29:',
             question: 'ধর্ম',
@@ -255,15 +264,11 @@ class _Module04State extends State<Module04> {
           MyDropDown(
             items: q_32a_item_list,
             dropDownCallback: (String text) {
-              q_32a_value = text;
               setState(() {
-                text == '1- একই জেলা'
-                    ? isVisibility = true
-                    : isVisibility = false;
+                q_32a_value = text;
               });
             },
           ),
-
           const QuestionRow(
             questionNo: 'Q 32 b:',
             question: 'অন্য জেলা/ দেশের কোড? ',
@@ -272,7 +277,6 @@ class _Module04State extends State<Module04> {
             width: 120,
             icon: Icons.edit,
           ),
-
           const QuestionRow(
             questionNo: 'Q 32 c:',
             question: 'জন্মস্থানের এলাকা?  ',
@@ -289,46 +293,29 @@ class _Module04State extends State<Module04> {
               });
             },
           ),
-
-          Visibility(
-            visible: isVisibility,
-            child:   Row(
-              children: const [
-                Text(
-                  'Q 33 a:',
-                  style: TextStyle(color: textColor, fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  'এ জেলায় কত বছর বসবাস করেন',
-                  style: TextStyle(color: textColor, fontWeight: FontWeight.w600),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8.0),
-                  child: Text(
-                    "(পূর্ণ বছরে)",
-                    style: TextStyle(
-                        color: textColor,
-                        fontWeight: FontWeight.w100,
-                        fontSize: 12),
+          MyDisableContainer(
+              isIgnore: q_32a_value == '1- একই জেলা' ? false : true,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  QuestionRowWithNote(
+                      questionNo: 'Q 33 a:',
+                      question: 'এ জেলায় কত বছর বসবাস করেন',
+                      note: "(পূর্ণ বছরে)"),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 20.0, top: 5, right: 8, bottom: 8),
+                    child: SizedBox(
+                      width: 120,
+                      child: MyTextField(
+                        inputType: TextInputType.number,
+                        icon: Icons.edit,
+                      ),
+                    ),
                   ),
-                )
-              ],
-            ),
-          ),
-          Visibility(
-            visible: isVisibility,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 20.0, top: 5, right: 8, bottom: 8),
-              child: SizedBox(
-                width: 120,
-                child: MyTextField(
-                  inputType: TextInputType.number,
-                  icon: Icons.edit,
-                ),
-              ),
-            ),
-          ),
+                ],
+              )),
           const QuestionRow(
             questionNo: 'Q 33 b:',
             question: ' এ জেলায় আসার প্রধান কারণ ',
@@ -369,7 +356,10 @@ class _Module04State extends State<Module04> {
             questionNo: 'Q 34 b:',
             question: 'অন্য জেলা/ অন্য দেশ',
           ),
-          MyTextField(icon: Icons.edit,width: 120,),
+          MyTextField(
+            icon: Icons.edit,
+            width: 120,
+          ),
           const QuestionRow(
             questionNo: 'Q 34 c:',
             question: 'বাসস্থানের এলাকা?',
@@ -386,8 +376,9 @@ class _Module04State extends State<Module04> {
               });
             },
           ),
-
-          const MySectionHeading(heading: '৩ বছর ও তদূর্ধ্ব বয়সের সদস্যদের জন্য ( 35 - 36)',),
+          const MySectionHeading(
+            heading: '৩ বছর ও তদূর্ধ্ব বয়সের সদস্যদের জন্য ( 35 - 36)',
+          ),
           const QuestionRow(
             questionNo: 'Q 35:',
             question: 'বর্তমানে লেখাপড়া করছেন কি?',
@@ -408,7 +399,6 @@ class _Module04State extends State<Module04> {
               });
             },
           ),
-
           const QuestionRow(
             questionNo: 'Q 36:',
             question: 'কোন প্রকারের শিক্ষা প্রতিষ্ঠানে লেখাপড়া করছেন?',
@@ -427,25 +417,33 @@ class _Module04State extends State<Module04> {
               });
             },
           ),
-
-          const MySectionHeading(heading: '৭ বছর ও তদূর্ধ্ব বয়সের সদস্যদের জন্য (37 - 39)',),
-          const QuestionRow(
-            questionNo: 'Q 37:',
-            question: 'চিঠি পড়তে ও লিখতে পারেন কিনা?',
+          const MySectionHeading(
+            heading: '৭ বছর ও তদূর্ধ্ব বয়সের সদস্যদের জন্য (37 - 39)',
           ),
-          MyDropDown(
-            items: const [
-              '১- পড়তে ও লিখতে পারে না',
-              '২ - শুধু পড়তে পারে ',
-              '৩ - পড়তে ও লিখতে পারে'
-            ],
-            dropDownCallback: (String text) {
-              setState(() {
-                q_37_value = text;
-              });
-            },
-          ),
-
+          MyDisableContainer(
+              isIgnore: q_35_value != '০- করছেন না' ? true : false,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const QuestionRow(
+                    questionNo: 'Q 37:',
+                    question: 'চিঠি পড়তে ও লিখতে পারেন কিনা?',
+                  ),
+                  MyDropDown(
+                    items: const [
+                      '১- পড়তে ও লিখতে পারে না',
+                      '২ - শুধু পড়তে পারে ',
+                      '৩ - পড়তে ও লিখতে পারে'
+                    ],
+                    dropDownCallback: (String text) {
+                      setState(() {
+                        q_37_value = text;
+                      });
+                    },
+                  ),
+                ],
+              )),
           const QuestionRow(
             questionNo: 'Q 38:',
             question: 'সর্বোচ্চ শ্রেণি পাস',
@@ -454,26 +452,30 @@ class _Module04State extends State<Module04> {
             width: 120,
             icon: Icons.edit,
           ),
-
           const QuestionRow(
             questionNo: 'Q 39:',
             question: 'শিক্ষার ক্ষেত্র',
           ),
           MyDropDown(
-            items: const ['১- সাধারণ', '২ - টেকনিক্যাল / ভোকেশনাল ', '৩ - ধর্মীয়'],
+            items: const [
+              '১- সাধারণ',
+              '২ - টেকনিক্যাল / ভোকেশনাল ',
+              '৩ - ধর্মীয়'
+            ],
             dropDownCallback: (String text) {
               setState(() {
                 q_39_value = text;
               });
             },
           )
-
         ],
       ),
     );
   }
 }
 
+
+///TODO: 32/33/34/37/40 need to solve
 
 // 'Muslim',
 // 'Hindu',

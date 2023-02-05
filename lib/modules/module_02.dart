@@ -1,3 +1,4 @@
+import 'package:bbs_app/widgets/my_check_box.dart';
 import 'package:bbs_app/widgets/question_row.dart';
 import 'package:flutter/material.dart';
 
@@ -24,27 +25,33 @@ class _Module02State extends State<Module02> {
     'এপার্টমেন্ট',
     'সংযুক্ত/ব্যারাক হাউজ',
   ];
-  List q_05_TitleListItem = [
-    'খড়/ বাঁশ/ পলিথিন/ প্লাস্টিক/ ক্যানভাস',
-    'মাটি/কাঁচা ইট',
-    'টিন (সিআইসিট)',
-    'কাঠ',
-    'ইট-সিমেন্ট',
-    'অন্যান্য'
+  List q_05_CheckList = [
+
+    {'title': 'খড়/ বাঁশ/ পলিথিন/ প্লাস্টিক/ ক্যানভাস', 'isActive': false},
+    {'title': 'মাটি/কাঁচা ইট', 'isActive': false},
+    {'title': 'টিন (সিআইসিট)', 'isActive': false},
+    {'title': 'কাঠ', 'isActive': false},
+    {'title': 'ইট-সিমেন্ট', 'isActive': false},
+    {'title': 'অন্যান্য', 'isActive': false},
+
   ];
-  List q_06_TitleListItem = [
-    'খড়/ বাঁশ/ পলিথিন/ প্লাস্টিক/ ক্যানভাস',
-    'টিন (সিআইসিট)',
-    'টালি',
-    'ইট-সিমেন্ট',
-    'অন্যান্য'
+  List q_06_CheckList = [
+
+    {'title': 'খড়/ বাঁশ/ পলিথিন/ প্লাস্টিক/ ক্যানভাস', 'isActive': false},
+
+    {'title': 'টিন (সিআইসিট)', 'isActive': false},
+    {'title': 'টালি', 'isActive': false},
+    {'title': 'ইট-সিমেন্ট', 'isActive': false},
+    {'title': 'অন্যান্য', 'isActive': false},
+
+
   ];
-  List q_07_TitleListItem = [
-    'মাটি',
-    'কাঠ/বাঁশ',
-    'ইট-সিমেন্ট',
-    'মোজাইক/ টাইলস',
-    'অন্যান্য'
+  List q_07_CheckList = [
+    {'title': 'মাটি', 'isActive': false},
+    {'title': 'কাঠ/বাঁশ', 'isActive': false},
+    {'title': 'ইট-সিমেন্ট', 'isActive': false},
+    {'title': 'মোজাইক/ টাইলস', 'isActive': false},
+    {'title': 'অন্যান্য', 'isActive': false},
   ];
   List q_09_TitleListItem = ['হ্যাঁ', 'না'];
   List q_10_TitleListItem = ['হ্যাঁ', 'না'];
@@ -72,26 +79,14 @@ class _Module02State extends State<Module02> {
             }),
           const QuestionRow(
               questionNo: 'Q 5:', question: 'প্রধান গৃহের দেয়ালের উপকরণ'),
-          MyRadioList(height: 90, radioList: q_05_TitleListItem, groupValue: q_05_groupValue, onChange: (value) {
-              setState(() {
-                q_05_groupValue = value;
-              });
-            }),
+          MyCheckBox(height: 90, checkList: q_05_CheckList),
 
           const QuestionRow(
               questionNo: 'Q 6:', question: 'প্রধান গৃহের ছাদের উপকরণ'),
-          MyRadioList(height: 90, radioList: q_06_TitleListItem, groupValue: q_06_groupValue, onChange: (value) {
-            setState(() {
-              q_06_groupValue = value;
-            });
-          }),
+          MyCheckBox(height: 90, checkList: q_06_CheckList),
           const QuestionRow(
-              questionNo: 'Q 7:', question: ' প্রধান গৃহে্র মেঝের উপকরণ '),
-          MyRadioList(height: 50, radioList: q_07_TitleListItem, groupValue: q_07_groupValue, onChange: (value) {
-            setState(() {
-              q_07_groupValue = value;
-            });
-          }),
+              questionNo: 'Q 7:', question: ' প্রধান গৃহের মেঝের উপকরণ '),
+          MyCheckBox(height: 90, checkList: q_07_CheckList),
           const QuestionRow(questionNo: 'Q 8:', question:'বাসস্থান'),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -104,7 +104,7 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
           child: PageView(
-            controller: PageController(initialPage: 9),
+            controller: PageController(initialPage: 4),
             //initialPage start from 0; Example module 7 will be 6 here
             scrollDirection: Axis.horizontal,
             children: const [

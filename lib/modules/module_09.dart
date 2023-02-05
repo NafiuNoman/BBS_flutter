@@ -20,7 +20,7 @@ class _Module09State extends State<Module09> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  const [
+        children: const [
           Center(
             child: Text(
               'মডিউল ৯: আন্তর্জাতিক মাইগ্রেশন  ',
@@ -37,19 +37,49 @@ class _Module09State extends State<Module09> {
             note: "( ইংরেজিতে বড় অক্ষরে ডাক নাম লিখুন )",
           ),
           QuestionRow(questionNo: "Q 68:", question: 'লিঙ্গ'),
-          MaleFemaleCounterBox(maleOrBoy:'ছেলে' ,femaleOrGirl: 'মেয়ে',),
-          QuestionRowWithNote(questionNo: 'Q 69:', question: '  বয়স ', note:'( বিদেশে যাবার সময় - পূর্ণ বছরে )'),
-          MyTextField(icon: Icons.edit,width: 250,inputType: TextInputType.number,),
-
-          QuestionRowWithNote(questionNo: 'Q 70:', question: '  সর্বোচ্চ শ্রেণী পাশ ', note:'( বিদেশে যাবার সময় - শিক্ষা কোড লিখুন ) '),
-          MyTextField(icon: Icons.edit,width: 250,),
-          QuestionRowWithNote(questionNo: 'Q 71:', question: '  বিদেশ থাকার সময়কাল ', note:'( পূর্ণ বছরে)'),
-          MyTextField(icon: Icons.edit,width: 250,inputType: TextInputType.number,),
+          MaleFemaleCounterBox(
+            maleOrBoy: 'ছেলে',
+            femaleOrGirl: 'মেয়ে',
+          ),
+          QuestionRowWithNote(
+              questionNo: 'Q 69:',
+              question: '  বয়স ',
+              note: '( বিদেশে যাবার সময় - পূর্ণ বছরে )'),
+          MyTextField(
+            icon: Icons.edit,
+            width: 250,
+            inputType: TextInputType.number,
+          ),
+          QuestionRowWithNote(
+              questionNo: 'Q 70:',
+              question: '  সর্বোচ্চ শ্রেণী পাশ ',
+              note: '( বিদেশে যাবার সময় - শিক্ষা কোড লিখুন ) '),
+          MyTextField(
+            icon: Icons.edit,
+            width: 250,
+          ),
+          QuestionRowWithNote(
+              questionNo: 'Q 71:',
+              question: '  বিদেশ থাকার সময়কাল ',
+              note: '( পূর্ণ বছরে)'),
+          MyTextField(
+            icon: Icons.edit,
+            width: 250,
+            inputType: TextInputType.number,
+          ),
           QuestionRow(questionNo: 'Q 72:', question: 'বিদেশ যাওয়ার কারণ'),
-          MyTextField(icon: Icons.edit,width: 250,),
-          QuestionRowWithNote(questionNo: 'Q 73:', question: '  সর্বশেষ গন্তব্য ', note:'( দেশের কোড লিখুন )'),
-          MyTextField(icon: Icons.edit,width: 250,),
-
+          MyTextField(
+            icon: Icons.edit,
+            width: 250,
+          ),
+          QuestionRowWithNote(
+              questionNo: 'Q 73:',
+              question: '  সর্বশেষ গন্তব্য ',
+              note: '( দেশের কোড লিখুন )'),
+          MyTextField(
+            icon: Icons.edit,
+            width: 250,
+          ),
         ],
       ),
     );
