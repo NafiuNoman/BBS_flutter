@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-const borderColor = Color.fromRGBO(153, 153, 153, 1);
-const valueColor = Color.fromRGBO(0, 148, 68, 1);
+import 'box_plus_minus_btn.dart';
 
-// FaIcon(FontAwesomeIcons.circleMinus,size: 16,)
 
-Decoration plusMinusBoxDecoration = BoxDecoration(
-  borderRadius: BorderRadius.circular(4),
-  border: Border.all(
-      width: 1.5, strokeAlign: BorderSide.strokeAlignInside, color: borderColor),
-);
 
-class BoxPlusMinusBtn extends StatefulWidget {
-  const BoxPlusMinusBtn({Key? key}) : super(key: key);
+
+
+class NewPlusMinusBtn extends StatefulWidget {
+  final void Function() addOnpressed;
+  final void Function() minusOnpressed;
+  final int count;
+  const NewPlusMinusBtn({Key? key, required this.count, required this.addOnpressed, required this.minusOnpressed}) : super(key: key);
 
   @override
-  State<BoxPlusMinusBtn> createState() => _BoxPlusMinusBtnState();
+  State<NewPlusMinusBtn> createState() => _NewPlusMinusBtnState();
 }
 
-class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
-  int _value = 0;
+class _NewPlusMinusBtnState extends State<NewPlusMinusBtn> {
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,7 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
               fit: FlexFit.loose,
               child: IconButton(
                 padding: EdgeInsets.zero,
-                onPressed: _deCremnt,
+                onPressed: widget.minusOnpressed,
                 icon: const Icon(
                   Icons.remove_circle_outline_outlined,
                   size: 19,
@@ -45,20 +43,21 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
             ),
             Flexible(
               fit: FlexFit.loose,
-              child: Text(
-                _value.toString(),
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                    color: valueColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500),
-              ),
+              child:  Text(
+                  '${widget.count}',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      color: valueColor,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500),
+                ),
+
             ),
             Flexible(
               fit: FlexFit.loose,
               child: IconButton(
                 padding: EdgeInsets.zero,
-                onPressed: _inCrement,
+                onPressed: widget.addOnpressed,
                 icon: const Icon(
                   Icons.add_circle_outline_outlined,
                   size: 19,
@@ -72,17 +71,4 @@ class _BoxPlusMinusBtnState extends State<BoxPlusMinusBtn> {
     );
   }
 
-  _inCrement() {
-    setState(() {
-      _value++;
-    });
-  }
-
-  _deCremnt() {
-    _value != 0
-        ? setState(() {
-            _value--;
-          })
-        : _value = 0;
-  }
 }

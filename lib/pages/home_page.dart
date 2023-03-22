@@ -139,6 +139,7 @@ class _HomepageState extends State<Homepage> {
       child: Container(
         decoration: BoxDecoration(
             color: const Color.fromRGBO(0, 140, 68, 0.1),
+
             borderRadius: BorderRadius.circular(8),
             boxShadow: const [
               BoxShadow(blurRadius: 5, blurStyle: BlurStyle.outer)

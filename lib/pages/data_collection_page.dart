@@ -1,6 +1,3 @@
-import 'package:bbs_app/modules/module_08.dart';
-import 'package:bbs_app/modules/module_09.dart';
-import 'package:bbs_app/modules/module_10.dart';
 import 'package:bbs_app/styles/title_banner.dart';
 import 'package:flutter/material.dart';
 import '../modules/module_01.dart';
@@ -10,6 +7,9 @@ import '../modules/module_04.dart';
 import '../modules/module_05.dart';
 import '../modules/module_06.dart';
 import '../modules/module_07.dart';
+import '../modules/module_08.dart';
+import '../modules/module_09.dart';
+import '../modules/module_10.dart';
 import '../widgets/my_circular_avatar.dart';
 
 class DataCollectionPage extends StatefulWidget {
@@ -35,9 +35,13 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
             children: [
               titleBanner(title: "নমুনা শুমারি প্রশ্ন ও তথ্য সংগ্রহ"),
               //pageView
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               buildPageView(),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
 
               //Submit and Draft button
               Row(
@@ -102,9 +106,9 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
               )
             ]),
         child: Padding(
-          padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 20),
+          padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 20),
           child: PageView(
-            controller: PageController(initialPage: 4),
+            controller: PageController(initialPage: 1),
             //initialPage start from 0; Example module 7 will be 6 here
             scrollDirection: Axis.horizontal,
             children: const [
@@ -118,7 +122,6 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
               Module08(),
               Module09(),
               Module10(),
-
             ],
           ),
         ),
@@ -145,7 +148,8 @@ class _DataCollectionPageState extends State<DataCollectionPage> {
             icon: const Icon(Icons.home_outlined, color: Colors.black)),
         IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.notifications_outlined, color: Colors.black)),
+            icon:
+                const Icon(Icons.notifications_outlined, color: Colors.black)),
         IconButton(
             onPressed: () {},
             icon: const Icon(Icons.email_outlined, color: Colors.black)),

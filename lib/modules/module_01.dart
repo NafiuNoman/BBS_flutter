@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/double_counter_queation.dart';
 import '../widgets/my_text_field.dart';
+import 'package:geolocator/geolocator.dart';
 
 class Module01 extends StatefulWidget {
   const Module01({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class Module01 extends StatefulWidget {
 }
 
 class _Module01State extends State<Module01> {
+  late Position _currentPosition;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -26,10 +29,23 @@ class _Module01State extends State<Module01> {
             ),
           ),
           ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              _getCurrentLocation();
+
+              if (_currentPosition != null) {
+                print('lat$_currentPosition.latitude');
+                print('long$_currentPosition.longitude');
+              } else
+                print('no data');
+            },
             icon: const Icon(Icons.gps_fixed),
-            label: const Text('জিপিএস অবস্থান',style: TextStyle(fontSize: 12),),
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(0, 140, 68, 1))),
+            label: const Text(
+              'জিপিএস অবস্থান',
+              style: TextStyle(fontSize: 12),
+            ),
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    const Color.fromRGBO(0, 140, 68, 1))),
           ),
 
           const QuestionRow(questionNo: 'Q 1a:', question: 'খানার ঠিকানা'),
@@ -76,5 +92,14 @@ class _Module01State extends State<Module01> {
         ],
       ),
     );
+  }
+
+  _getCurrentLocation() async {
+    await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
+        .then((position) {
+      setState(() {
+        _currentPosition = position;
+      });
+    });
   }
 }
